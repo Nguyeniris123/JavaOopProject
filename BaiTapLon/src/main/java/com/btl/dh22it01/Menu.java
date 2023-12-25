@@ -21,7 +21,6 @@ public class Menu {
             System.out.println("7. Xuat de cuong");
             System.out.println("8. Thong ke so luong de cuong theo so tin chi");
             System.out.println("0. Thoat");
-
             System.out.println("================");
 
             System.out.print("Moi ban chon: ");
