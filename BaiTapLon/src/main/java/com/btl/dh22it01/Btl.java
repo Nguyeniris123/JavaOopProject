@@ -8,8 +8,8 @@ package com.btl.dh22it01;
  *
  * @author NGUYEN
  */
-public class Test {
+public class Btl {
     public static void main(String[] args) {
-        //CLASS NAY DUNG DE TEST CAC PHUONG THUC, CAC HAM. KO PHAI CHUONG TRINH HOAN CHINH
+        Menu mn = new Menu();
     }
 }

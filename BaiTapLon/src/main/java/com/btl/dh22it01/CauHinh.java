@@ -4,12 +4,12 @@
  */
 package com.btl.dh22it01;
 
+import java.util.Scanner;
+
 /**
  *
  * @author NGUYEN
  */
-public class Test {
-    public static void main(String[] args) {
-        //CLASS NAY DUNG DE TEST CAC PHUONG THUC, CAC HAM. KO PHAI CHUONG TRINH HOAN CHINH
-    }
+public class CauHinh {
+    public static final Scanner SC =  new Scanner(System.in);
 }
