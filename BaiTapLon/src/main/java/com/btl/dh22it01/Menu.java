@@ -11,7 +11,6 @@ public class Menu {
 
     public Menu() {
         do {
-            System.out.print("\033[H\033[2J");
             System.out.println("===== Menu =====");
             System.out.println("1. Tao mon de cuong cho mon hoc");
             System.out.println("2. Cap nhat thong tin trong de cuong duoc phan cong");
