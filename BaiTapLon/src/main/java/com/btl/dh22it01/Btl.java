@@ -10,8 +10,6 @@ package com.btl.dh22it01;
  */
 public class Btl {
     public static void main(String[] args) {
-        Menu mn = new Menu();
-        System.out.print("123 ");
-                
+        Menu mn = new Menu();           
     }
 }
