@@ -3,15 +3,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.btl.dh22it01;
-import java.io.FileNotFoundException;
 
 /**
- * 
  *
  * @author NGUYEN
  */
-public class Btl {
-    public static void main(String[] args) throws FileNotFoundException {
-        Menu mn = new Menu();           
-    }
+public enum KhoiKienThuc {
+    Co_So("Co so"),
+    Co_So_Nganh("Co so nganh"),
+    Chuyen_Nganh("Chuyen nganh");
+    
+    private String KKT;
+    private KhoiKienThuc(String KKT) {
+        this.KKT = KKT;
+    }          
 }
