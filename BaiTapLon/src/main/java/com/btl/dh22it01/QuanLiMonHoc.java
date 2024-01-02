@@ -42,7 +42,7 @@ public class QuanLiMonHoc {
     }
 
     public void docDsMonHoc() throws FileNotFoundException {
-        File f = new File("C:\\Users\\NGUYEN\\JavaOopProject\\BaiTapLon\\src\\main\\resources\\monhoc");
+        File f = new File("src\\main\\resources\\monhoc.txt");
         BufferedReader br = new BufferedReader(new FileReader(f));
         try {
             while (true) {
