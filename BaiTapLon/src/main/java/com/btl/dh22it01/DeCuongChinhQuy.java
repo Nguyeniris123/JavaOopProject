@@ -22,7 +22,7 @@ public class DeCuongChinhQuy extends DeCuong {
     public DeCuongChinhQuy(MonHoc monHoc) {
         this.monHoc = monHoc;
     }
-    
+
     @Override
     public void taoDeCuong(DeCuong deCuong) {
         if (getDeCuongList1().isEmpty()) {

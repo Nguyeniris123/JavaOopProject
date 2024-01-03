@@ -22,6 +22,7 @@ public class Menu {
 //        ql.themMonHoc(mh1, mh3);
         QuanLiMonHoc ql = new QuanLiMonHoc();
         ql.docDsMonHoc();
+        ql.hienThiDSTenMonHoc_1();
         do {
             System.out.println("===== Menu =====");
             System.out.println("1. Tao de cuong cho mon hoc");
@@ -37,10 +38,9 @@ public class Menu {
 
             System.out.print("Moi ban chon: ");
             int choice = CauHinh.SC.nextByte();
-            
-            /*switch (choice) {
+
+            switch (choice) {
                 case 1:
-                    ql.hienThiDSMH_2();
                     System.out.println("1. Tao de cuong chinh quy");
                     System.out.println("2. Tao de cuong lien thong");
                     System.out.println("0. Thoat");
@@ -49,14 +49,14 @@ public class Menu {
                     int c1 = CauHinh.SC.nextByte();
                     CauHinh.SC.nextLine();
                     switch (c1) {
-                        
+
                         case 1:
-                            //    dc1.taoDeCuong(dc1);
+
                             break;
                         case 2:
-                            //dc2.taoDeCuong(dc2);
+
                             break;
-                        case 0:                            
+                        case 0:
                             break;
                         default:
                             System.out.println("SAI CU PHAP VUI LONG NHAP LAI!!!");
@@ -89,7 +89,7 @@ public class Menu {
                     CauHinh.SC.nextLine();
                     System.out.print("Nhap ma mon: ");
                     String id = CauHinh.SC.nextLine();
-                    
+
                     System.out.println("================");
                     System.out.println("1. Danh sach mon hoc truoc");
                     System.out.println("2. Danh sach mon hoc tien quyet");
@@ -100,10 +100,10 @@ public class Menu {
                     CauHinh.SC.nextLine();
                     switch (c4) {
                         case 1:
-                            ql.hienThiDsMonHocTruoc(id).forEach(h -> h.hienThiMonHoc());
+                            ql.timKiem(id).hienThiDSMonHocTruoc();
                             break;
                         case 2:
-                            ql.hienThiDsMonHocTienQuyet(id).forEach(h -> h.hienThiMonHoc());
+                            ql.timKiem(id).hienThiDSMonHocTienQuyet();
                             break;
                         case 0:
                             break;
@@ -118,7 +118,7 @@ public class Menu {
 
                     break;
                 case 7:
-                    ql.hienThiDsMonHoc();
+                    ql.hienThiDSTenMonHoc_1();
                     System.out.println("1. Xuat de cuong chinh quy");
                     System.out.println("2. Xuat De cuong lien thong");
                     System.out.println("0. Thoat");
@@ -128,10 +128,10 @@ public class Menu {
                     CauHinh.SC.nextLine();
                     switch (c7) {
                         case 1:
-                            //    dc1.taoDeCuong(dc1);
+
                             break;
                         case 2:
-                            //dc2.taoDeCuong(dc2);
+
                             break;
                         case 0:
                             break;
@@ -147,7 +147,7 @@ public class Menu {
                     return;
                 default:
                     System.out.println("SAI CU PHAP VUI LONG NHAP LAI!!!");
-            }*/
+            }
         } while (true);
     }
 }

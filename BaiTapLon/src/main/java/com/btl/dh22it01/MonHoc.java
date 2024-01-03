@@ -19,27 +19,22 @@ public class MonHoc {
     private String moTaMonHoc;
     private int soTinChi;
     private KhoiKienThuc khoiKienThuc;
-    private QuanLiMonHoc monHocTienQuyet=new QuanLiMonHoc();
-    private QuanLiMonHoc monHocTruoc=new QuanLiMonHoc();
-    
+    private QuanLiMonHoc monHocTienQuyet = new QuanLiMonHoc();
+    private QuanLiMonHoc monHocTruoc = new QuanLiMonHoc();
+
     {
-        this.maMonHoc= String.format("DH22%03d", ++dem);
+        this.maMonHoc = String.format("DH22%03d", ++dem);
     }
-    
 
-    
-    
-            
-
-    public MonHoc( String tenMonHoc, String moTaMonHoc, int soTinChi, KhoiKienThuc khoiKienThuc) {
+    public MonHoc(String tenMonHoc, String moTaMonHoc, int soTinChi, KhoiKienThuc khoiKienThuc) {
         this.tenMonHoc = tenMonHoc;
         this.moTaMonHoc = moTaMonHoc;
         this.soTinChi = soTinChi;
         this.khoiKienThuc = khoiKienThuc;
     }
-    
+
     public MonHoc() {
-        
+
     }
 
     public MonHoc(String tenMonHoc) {
@@ -64,18 +59,29 @@ public class MonHoc {
         System.out.printf("Mo ta mon hoc: %s\n", this.getMoTaMonHoc());
         System.out.printf("So tin chi: %d\n", this.getSoTinChi());
         System.out.printf("Khoi kien thuc: %s\n", this.getKhoiKienThuc());
-        
-        if(!this.monHocTienQuyet.getMh().isEmpty()) {
-			System.out.print("Danh sach mon hoc tien quyet: ");
-                        this.getMonHocTienQuyet().hienThiDSTenMonHoc();
-		}
-		if(!this.monHocTruoc.getMh().isEmpty()) {
-			
-			System.out.print("Danh sach mon hoc truoc: ");
-                        this.getMonHocTruoc().hienThiDSTenMonHoc();
-			
-		}
+        this.hienThiDSMonHocTienQuyet();
+        this.hienThiDSMonHocTruoc();
+
         System.out.println("-------------");
+    }
+
+    public void hienThiDSMonHocTruoc() {
+        if (!this.monHocTruoc.getMh().isEmpty()) {
+
+            System.out.print("Danh sach mon hoc truoc: ");
+            this.getMonHocTruoc().hienThiDSTenMonHoc();
+
+        }
+
+    }
+
+    public void hienThiDSMonHocTienQuyet() {
+
+        if (!this.monHocTienQuyet.getMh().isEmpty()) {
+            System.out.print("Danh sach mon hoc tien quyet: ");
+            this.getMonHocTienQuyet().hienThiDSTenMonHoc();
+        }
+
     }
 
     /**
@@ -88,8 +94,6 @@ public class MonHoc {
     /**
      * @param aDem the dem to set
      */
-    
-
     /**
      * @return the maMonHoc
      */
@@ -100,7 +104,6 @@ public class MonHoc {
     /**
      * @param maMonHoc the maMonHoc to set
      */
-    
     /**
      * @return the tenMonHoc
      */
@@ -184,7 +187,5 @@ public class MonHoc {
     public void setMonHocTruoc(QuanLiMonHoc monHocTruoc) {
         this.monHocTruoc = monHocTruoc;
     }
-    
-    
 
 }

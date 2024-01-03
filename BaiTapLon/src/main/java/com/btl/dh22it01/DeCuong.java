@@ -12,6 +12,7 @@ import java.util.List;
  * @author NGUYEN
  */
 public abstract class DeCuong {
+
     protected MonHoc monHoc;
     protected String mucTieu;
     protected String chuanDauRa;
@@ -36,21 +37,22 @@ public abstract class DeCuong {
     public void nhap1DeCuong() {
         System.out.print("Muc tieu: ");
         this.mucTieu = CauHinh.SC.nextLine();
-        
+
         System.out.print("Chuan dau ra: ");
         this.chuanDauRa = CauHinh.SC.nextLine();
         System.out.print("Noi dung: ");
         this.noiDung = CauHinh.SC.nextLine();
         System.out.print("Giang vien: ");
-        this.giangVien = CauHinh.SC.nextLine();  
-        int n;        
+        this.giangVien = CauHinh.SC.nextLine();
+        int n;
         do {
             System.out.print("Nhap so cot Diem: ");
             n = Integer.parseInt(CauHinh.SC.nextLine());
-            if (n>4||n<2) 
+            if (n > 4 || n < 2) {
                 System.out.println("Khong hop le. Nhap lai");
-        } while (n>4||n<2);
-        for (int i =1;i<=n;i++) {
+            }
+        } while (n > 4 || n < 2);
+        for (int i = 1; i <= n; i++) {
             System.out.println("COT DIEM THU " + i);
             this.nhapCotDiem(new CotDiem());
         }
@@ -66,7 +68,7 @@ public abstract class DeCuong {
     public void hienThiDsCotDiem() {
         this.CotDiemList.forEach(h -> h.hienThiCotDiem());
     }
-    
+
     public void thongTinDeCuong() {
         System.out.printf("Muc tieu: %s\n", this.mucTieu);
         System.out.printf("Chuan dau ra: %s\n", this.chuanDauRa);
@@ -75,6 +77,7 @@ public abstract class DeCuong {
     }
 
     public abstract void taoDeCuong(DeCuong deCuong);
+
     public abstract void hienThiDeCuong();
 
     /**

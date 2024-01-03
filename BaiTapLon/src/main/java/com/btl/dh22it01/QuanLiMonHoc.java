@@ -29,44 +29,39 @@ public class QuanLiMonHoc {
         this.getMh().addAll(Arrays.asList(a));
     }
 
-    
-
     public MonHoc timKiem(String kw) {
         return this.mh.stream().filter(h -> h.getMaMonHoc().equals(kw) || h.getTenMonHoc().contains(kw)).findFirst().orElse(null);
     }
+
     public MonHoc timKiem(int maMonHoc) {
-		
-		String str=Integer.toString(maMonHoc);
-		char[] arr=str.toCharArray();
-		return this.mh.stream().filter(p->Character.compare(arr[0],p.getMaMonHoc().toCharArray()[p.getMaMonHoc().length()-1])==0).findFirst().orElse(null);
-		
-		
-	}
-	
+        String str = Integer.toString(maMonHoc);
+        char[] arr = str.toCharArray();
+        return this.mh.stream().filter(p -> Character.compare(arr[0], p.getMaMonHoc().toCharArray()[p.getMaMonHoc().length() - 1]) == 0).findFirst().orElse(null);
+    }
+
     public void hienThiDsThongTinMonHoc() {
         this.mh.forEach(h -> h.hienThiMonHoc());
     }
-    
-    public void hienThiDSTenMonHoc (){
+
+    public void hienThiDSTenMonHoc() {
         this.mh.forEach(
-				p->{
-					if(p==null)
-						return;
-					
-					if(p==this.mh.get(this.mh.size()-1))
-						System.out.printf("%s(%s). \n",p.getTenMonHoc(),p.getMaMonHoc());
-					else
-						
-						System.out.printf("%s(%s),",p.getTenMonHoc(),p.getMaMonHoc());
-								
-				}
-												
-			);
-        
+                p -> {
+                    if (p == null) {
+                        return;
+                    }
+
+                    if (p == this.mh.get(this.mh.size() - 1)) {
+                        System.out.printf("%s(%s). \n", p.getTenMonHoc(), p.getMaMonHoc());
+                    } else {
+                        System.out.printf("%s(%s),", p.getTenMonHoc(), p.getMaMonHoc());
+                    }
+                }
+        );
     }
-   public void hienThiTDSTenMonHoc_1(){
-        this.mh.forEach(p-> System.out.printf("%s(%s)\n",p.getTenMonHoc(),p.getMaMonHoc()));
-        
+
+    public void hienThiDSTenMonHoc_1() {
+        this.mh.forEach(p -> System.out.printf("%s(%s)\n", p.getTenMonHoc(), p.getMaMonHoc()));
+
     }
 
     public void docDsMonHoc() throws FileNotFoundException {
@@ -85,45 +80,49 @@ public class QuanLiMonHoc {
                 khoiTao.setSoTinChi(Integer.parseInt(mangDuLieu[2]));
                 int KKT = Integer.parseInt(mangDuLieu[3]);
                 switch (KKT) {
-                    case 1 -> khoiTao.setKhoiKienThuc(KhoiKienThuc.Co_So);
-                    case 2 -> khoiTao.setKhoiKienThuc(KhoiKienThuc.Co_So_Nganh);
-                    default -> khoiTao.setKhoiKienThuc(KhoiKienThuc.Chuyen_Nganh);
+                    case 1 ->
+                        khoiTao.setKhoiKienThuc(KhoiKienThuc.Co_So);
+                    case 2 ->
+                        khoiTao.setKhoiKienThuc(KhoiKienThuc.Co_So_Nganh);
+                    default ->
+                        khoiTao.setKhoiKienThuc(KhoiKienThuc.Chuyen_Nganh);
                 }
-               
+
                 this.themMonHoc(khoiTao);
             }
-            File f1=new File("src\\main\\resources\\MonHocKemTheo.txt");
-			try {
-				
-					BufferedReader br1=Files.newBufferedReader(f1.toPath(),StandardCharsets.UTF_8);
-					while(true) {
-						String duLieu=br1.readLine();
-						if(duLieu==null)
-							break;
-						String []mangDuLieu=duLieu.split(",");
-						MonHoc boSung=this.timKiem(mangDuLieu[0]);
-                                                
-						for(int i=1;i<=3;i++) {
-							if(mangDuLieu[i].equals("0")==false)
-								boSung.themMonHocTienQuyet(this.timKiem(Integer.parseInt(mangDuLieu[i])));
-						
-						}
-						for(int i=4;i<=6;i++) {
-							if(mangDuLieu[i].equals("0")==false)
-								boSung.themMonHocTruoc(this.timKiem(Integer.parseInt(mangDuLieu[i])));
-						}
-					}
-			} catch (IOException | NumberFormatException e) {
-				// TODO: handle exception
-			}
-            
-			
+            File f1 = new File("src\\main\\resources\\MonHocKemTheo.txt");
+            try {
+
+                BufferedReader br1 = Files.newBufferedReader(f1.toPath(), StandardCharsets.UTF_8);
+                while (true) {
+                    String duLieu = br1.readLine();
+                    if (duLieu == null) {
+                        break;
+                    }
+                    String[] mangDuLieu = duLieu.split(",");
+                    MonHoc boSung = this.timKiem(mangDuLieu[0]);
+
+                    for (int i = 1; i <= 3; i++) {
+                        if (mangDuLieu[i].equals("0") == false) {
+                            boSung.themMonHocTienQuyet(this.timKiem(Integer.parseInt(mangDuLieu[i])));
+                        }
+
+                    }
+                    for (int i = 4; i <= 6; i++) {
+                        if (mangDuLieu[i].equals("0") == false) {
+                            boSung.themMonHocTruoc(this.timKiem(Integer.parseInt(mangDuLieu[i])));
+                        }
+                    }
+                }
+            } catch (IOException | NumberFormatException e) {
+                // TODO: handle exception
+            }
+
         } catch (IOException | NumberFormatException e) {
-            
+
         }
     }
 
-    
     /**
      * @return the mh
      */

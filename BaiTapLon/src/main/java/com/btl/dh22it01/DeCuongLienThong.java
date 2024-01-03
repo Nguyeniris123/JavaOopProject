@@ -12,9 +12,9 @@ import java.util.List;
  * @author NGUYEN
  */
 public class DeCuongLienThong extends DeCuong {
+
     private List<DeCuong> deCuongList2 = new ArrayList<>(1);
-    
-    
+
     public DeCuongLienThong(MonHoc monHoc, String mucTieu, String chuanDauRa, String noiDung, String giangVien) {
         super(monHoc, mucTieu, chuanDauRa, noiDung, giangVien);
     }
@@ -22,19 +22,17 @@ public class DeCuongLienThong extends DeCuong {
     public DeCuongLienThong(MonHoc monHoc) {
         this.monHoc = monHoc;
     }
-    
-    
-    
+
     @Override
     public void taoDeCuong(DeCuong deCuong) {
-            if (getDeCuongList2().isEmpty()) {
-                System.out.println("Chua co de cuong");
-                nhap1DeCuong();
-                getDeCuongList2().add(deCuong);
-                System.out.println("Da tao de cuong cho mon hoc " + monHoc.getTenMonHoc());
-            } else {
-                System.out.println("Mon hoc da co de cuong. Khong the tao them");
-            }          
+        if (getDeCuongList2().isEmpty()) {
+            System.out.println("Chua co de cuong");
+            nhap1DeCuong();
+            getDeCuongList2().add(deCuong);
+            System.out.println("Da tao de cuong cho mon hoc " + monHoc.getTenMonHoc());
+        } else {
+            System.out.println("Mon hoc da co de cuong. Khong the tao them");
+        }
     }
 
     @Override
@@ -43,7 +41,7 @@ public class DeCuongLienThong extends DeCuong {
         this.monHoc.hienThiMonHoc();
         this.thongTinDeCuong();
         this.hienThiDsCotDiem();
-        
+
         CauHinh.SC.nextLine();
         System.out.println("An ENTER de tiep tuc! ");
         CauHinh.SC.nextLine();
