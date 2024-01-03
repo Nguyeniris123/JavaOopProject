@@ -47,9 +47,9 @@ public abstract class DeCuong {
         do {
             System.out.print("Nhap so cot Diem: ");
             n = Integer.parseInt(CauHinh.SC.nextLine());
-            if (n>4) 
+            if (n>4||n<2) 
                 System.out.println("Khong hop le. Nhap lai");
-        } while (n>4);
+        } while (n>4||n<2);
         for (int i =1;i<=n;i++) {
             System.out.println("COT DIEM THU " + i);
             this.nhapCotDiem(new CotDiem());
@@ -57,7 +57,7 @@ public abstract class DeCuong {
     }
 
     public void nhapCotDiem(CotDiem cotDiem) {
-        if (this.CotDiemList.size() <= 4) {
+        if (this.CotDiemList.size() < 4) {
             cotDiem.nhap1CotDiem();
             this.CotDiemList.add(cotDiem);
         }

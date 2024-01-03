@@ -37,10 +37,10 @@ public class Menu {
 
             System.out.print("Moi ban chon: ");
             int choice = CauHinh.SC.nextByte();
-
-            switch (choice) {
+            
+            /*switch (choice) {
                 case 1:
-                    ql.hienThiDsMonHoc();
+                    ql.hienThiDSMH_2();
                     System.out.println("1. Tao de cuong chinh quy");
                     System.out.println("2. Tao de cuong lien thong");
                     System.out.println("0. Thoat");
@@ -49,6 +49,7 @@ public class Menu {
                     int c1 = CauHinh.SC.nextByte();
                     CauHinh.SC.nextLine();
                     switch (c1) {
+                        
                         case 1:
                             //    dc1.taoDeCuong(dc1);
                             break;
@@ -76,7 +77,7 @@ public class Menu {
                         case 1:
                             System.out.print("Nhap ma mon hoc hoac ten mon hoc: ");
                             String kw = CauHinh.SC.nextLine();
-                            ql.timKiem(kw).forEach(h -> h.hienThiMonHoc());
+                            ql.timKiem(kw).hienThiMonHoc();
                             break;
                         case 0:
                             break;
@@ -88,7 +89,7 @@ public class Menu {
                     CauHinh.SC.nextLine();
                     System.out.print("Nhap ma mon: ");
                     String id = CauHinh.SC.nextLine();
-
+                    
                     System.out.println("================");
                     System.out.println("1. Danh sach mon hoc truoc");
                     System.out.println("2. Danh sach mon hoc tien quyet");
@@ -146,7 +147,7 @@ public class Menu {
                     return;
                 default:
                     System.out.println("SAI CU PHAP VUI LONG NHAP LAI!!!");
-            }
+            }*/
         } while (true);
     }
 }

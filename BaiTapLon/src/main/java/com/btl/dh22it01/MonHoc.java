@@ -19,13 +19,17 @@ public class MonHoc {
     private String moTaMonHoc;
     private int soTinChi;
     private KhoiKienThuc khoiKienThuc;
+    private QuanLiMonHoc monHocTienQuyet=new QuanLiMonHoc();
+    private QuanLiMonHoc monHocTruoc=new QuanLiMonHoc();
+    
     {
-        this.maMonHoc=String.format("DH%03d", ++dem);
+        this.maMonHoc= String.format("DH22%03d", ++dem);
     }
     
 
-    private List<MonHoc> monHocTruoc = new ArrayList<>(3);
-    private List<MonHoc> monHocTienQuyet = new ArrayList<>(3);
+    
+    
+            
 
     public MonHoc( String tenMonHoc, String moTaMonHoc, int soTinChi, KhoiKienThuc khoiKienThuc) {
         this.tenMonHoc = tenMonHoc;
@@ -43,25 +47,34 @@ public class MonHoc {
     }
 
     public void themMonHocTruoc(MonHoc monHoc) {
-        if (this.monHocTruoc.size() <= 3) {
-            this.monHocTruoc.add(monHoc);
+        if (this.getMonHocTruoc().getMh().size() <= 3) {
+            this.getMonHocTruoc().themMonHoc(monHoc);
         }
     }
 
     public void themMonHocTienQuyet(MonHoc monHoc) {
-        if (this.monHocTienQuyet.size() <= 3) {
-            this.monHocTienQuyet.add(monHoc);
+        if (this.getMonHocTienQuyet().getMh().size() <= 3) {
+            this.getMonHocTienQuyet().themMonHoc(monHoc);
         }
     }
 
     public void hienThiMonHoc() {
-        System.out.printf("Ma mon hoc: %s\n", this.maMonHoc);
-        System.out.printf("Ten mon hoc: %s\n", this.tenMonHoc);
-        System.out.printf("Mo ta mon hoc: %s\n", this.moTaMonHoc);
-        System.out.printf("So tin chi: %d\n", this.soTinChi);
-        System.out.printf("Khoi kien thuc: %s\n", this.khoiKienThuc);
-        System.out.printf("Danh sach mon hoc truoc: %s\n", this.monHocTruoc);
-        System.out.printf("Danh sach mon hoc tien quyet: %s\n", this.monHocTienQuyet);
+        System.out.printf("Ma mon hoc: %s\n", this.getMaMonHoc());
+        System.out.printf("Ten mon hoc: %s\n", this.getTenMonHoc());
+        System.out.printf("Mo ta mon hoc: %s\n", this.getMoTaMonHoc());
+        System.out.printf("So tin chi: %d\n", this.getSoTinChi());
+        System.out.printf("Khoi kien thuc: %s\n", this.getKhoiKienThuc());
+        
+        if(!this.monHocTienQuyet.getMh().isEmpty()) {
+			System.out.print("Danh sach mon hoc tien quyet: ");
+                        this.getMonHocTienQuyet().hienThiDSTenMonHoc();
+		}
+		if(!this.monHocTruoc.getMh().isEmpty()) {
+			
+			System.out.print("Danh sach mon hoc truoc: ");
+                        this.getMonHocTruoc().hienThiDSTenMonHoc();
+			
+		}
         System.out.println("-------------");
     }
 
@@ -75,10 +88,19 @@ public class MonHoc {
     /**
      * @param aDem the dem to set
      */
-    public static void setDem(int aDem) {
-        dem = aDem;
+    
+
+    /**
+     * @return the maMonHoc
+     */
+    public String getMaMonHoc() {
+        return maMonHoc;
     }
 
+    /**
+     * @param maMonHoc the maMonHoc to set
+     */
+    
     /**
      * @return the tenMonHoc
      */
@@ -129,52 +151,40 @@ public class MonHoc {
     }
 
     /**
-     * @param KKT
+     * @param khoiKienThuc the khoiKienThuc to set
      */
-    public void setKhoiKienThuc( KhoiKienThuc KKT) {
-        this.khoiKienThuc = KKT;
-    }
-
-    /**
-     * @return the monHocTruoc
-     */
-    public List<MonHoc> getMonHocTruoc() {
-        return monHocTruoc;
-    }
-
-    /**
-     * @param monHocTruoc the monHocTruoc to set
-     */
-    public void setMonHocTruoc(List<MonHoc> monHocTruoc) {
-        this.monHocTruoc = monHocTruoc;
+    public void setKhoiKienThuc(KhoiKienThuc khoiKienThuc) {
+        this.khoiKienThuc = khoiKienThuc;
     }
 
     /**
      * @return the monHocTienQuyet
      */
-    public List<MonHoc> getMonHocTienQuyet() {
+    public QuanLiMonHoc getMonHocTienQuyet() {
         return monHocTienQuyet;
     }
 
     /**
      * @param monHocTienQuyet the monHocTienQuyet to set
      */
-    public void setMonHocTienQuyet(List<MonHoc> monHocTienQuyet) {
+    public void setMonHocTienQuyet(QuanLiMonHoc monHocTienQuyet) {
         this.monHocTienQuyet = monHocTienQuyet;
     }
 
     /**
-     * @return the maMonHoc
+     * @return the monHocTruoc
      */
-    public String getMaMonHoc() {
-        return maMonHoc;
+    public QuanLiMonHoc getMonHocTruoc() {
+        return monHocTruoc;
     }
 
     /**
-     * @param maMonHoc the maMonHoc to set
+     * @param monHocTruoc the monHocTruoc to set
      */
-    public void setMaMonHoc(String maMonHoc) {
-        this.maMonHoc = maMonHoc;
+    public void setMonHocTruoc(QuanLiMonHoc monHocTruoc) {
+        this.monHocTruoc = monHocTruoc;
     }
+    
+    
 
 }

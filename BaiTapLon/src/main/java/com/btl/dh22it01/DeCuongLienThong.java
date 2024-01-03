@@ -13,6 +13,8 @@ import java.util.List;
  */
 public class DeCuongLienThong extends DeCuong {
     private List<DeCuong> deCuongList2 = new ArrayList<>(1);
+    
+    
     public DeCuongLienThong(MonHoc monHoc, String mucTieu, String chuanDauRa, String noiDung, String giangVien) {
         super(monHoc, mucTieu, chuanDauRa, noiDung, giangVien);
     }
