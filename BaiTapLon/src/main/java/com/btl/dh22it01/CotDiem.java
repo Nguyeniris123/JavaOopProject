@@ -12,13 +12,13 @@ public class CotDiem {
 
     private String phuongPhapDanhGia;
     private String noiDungDanhGia;
-    private int tyLe;
+    private double tyLe;
 
     public CotDiem() {
 
     }
 
-    public CotDiem(String phuongPhapDanhGia, String noiDungDanhGia, int tyLe) {
+    public CotDiem(String phuongPhapDanhGia, String noiDungDanhGia, double tyLe) {
         this.phuongPhapDanhGia = phuongPhapDanhGia;
         this.noiDungDanhGia = noiDungDanhGia;
         this.tyLe = tyLe;
@@ -31,13 +31,13 @@ public class CotDiem {
         System.out.print("Noi dung danh gia: ");
         this.noiDungDanhGia = CauHinh.SC.nextLine();
         System.out.print("Ty le: ");
-        this.tyLe = Integer.parseInt(CauHinh.SC.nextLine());
+        this.tyLe = Double.parseDouble(CauHinh.SC.nextLine());
     }
 
     public void hienThiCotDiem() {
         System.out.printf("Phuong phap danh gia: %s\n", this.phuongPhapDanhGia);
         System.out.printf("Noi dung danh gia: %s\n", this.noiDungDanhGia);
-        System.out.printf("Ty le: %d\n", this.tyLe);
+        System.out.printf("Ty le: %.2f\n", this.tyLe);
         System.out.println("--------------------");
     }
 
@@ -72,14 +72,14 @@ public class CotDiem {
     /**
      * @return the tyLe
      */
-    public int getTyLe() {
+    public double getTyLe() {
         return tyLe;
     }
 
     /**
      * @param tyLe the tyLe to set
      */
-    public void setTyLe(int tyLe) {
+    public void setTyLe(double tyLe) {
         this.tyLe = tyLe;
     }
 

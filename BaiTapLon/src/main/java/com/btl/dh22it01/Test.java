@@ -10,11 +10,16 @@ import java.io.FileNotFoundException;
  *
  * @author NGUYEN
  */
-//public class Test {
+public class Test {
 //    public static void main(String[] args) throws FileNotFoundException {
 //        //CLASS NAY DUNG DE TEST CAC PHUONG THUC, CAC HAM. KO PHAI CHUONG TRINH HOAN CHINH
 //        QuanLiMonHoc a = new QuanLiMonHoc();
 //        a.docDsMonHoc();
-//        a.hienThiDsThongTinMonHoc();  
+//        DeCuongChinhQuy b = null;
+//        if(b==null)
+//            System.out.println("com.btl.dh22it01.Test.main()");
+//        b= new DeCuongChinhQuy();
+//        if(b==null)
+//            System.out.println("com.btl.dh22it01.Test.main()");
 //    }
-//}
+}

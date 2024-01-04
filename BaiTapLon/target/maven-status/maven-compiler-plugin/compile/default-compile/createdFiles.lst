@@ -1,5 +1,6 @@
 com\btl\dh22it01\Btl.class
 com\btl\dh22it01\DeCuongChinhQuy.class
+com\btl\dh22it01\Test.class
 com\btl\dh22it01\QuanLiMonHoc.class
 com\btl\dh22it01\MonHoc.class
 com\btl\dh22it01\DeCuongLienThong.class
@@ -9,3 +10,4 @@ com\btl\dh22it01\KhoiKienThuc.class
 com\btl\dh22it01\CotDiem.class
 com\btl\dh22it01\Menu.class
 com\btl\dh22it01\GiangVien.class
+com\btl\dh22it01\QuanLyDeCuong.class
