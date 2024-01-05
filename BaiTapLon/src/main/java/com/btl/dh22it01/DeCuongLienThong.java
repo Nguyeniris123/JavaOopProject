@@ -38,6 +38,17 @@ public class DeCuongLienThong extends DeCuong {
         super.suaNoiDung(); 
         System.out.printf("DA SUA NOI DUNG DE CUONG MON %s HE LIEN THONG\n", this.monHoc.getTenMonHoc());
     }    
+    
+    @Override
+    public void nhapCotDiem(CotDiem cotDiem) {
+        super.nhapCotDiem(cotDiem);
+        System.out.printf("DA THEM COT DIEM DE CUONG MON %s HE LIEN THONG\n", this.monHoc.getTenMonHoc());
+    }
+    
+    @Override
+    public void xoaCotDiem() {
+        super.xoaCotDiem();
+    }
         
     @Override
     public void hienThiDeCuong() {

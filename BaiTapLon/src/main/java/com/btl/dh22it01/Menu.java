@@ -97,17 +97,34 @@ public class Menu {
                                     b.suaDeCuongChinhQuy();
                                     break;
                                 case 2:
-
+                                    System.out.print("Nhap ma mon hoc muon them: ");
+                                    String maMon1 = CauHinh.SC.nextLine();
+                                    MonHoc mh1 = ql.timKiem(maMon1);
+                                    ql.timKiem(id2).themMonHocTruoc(mh1);
                                     break;
                                 case 3:
+                                    System.out.print("Nhap ma mon hoc muon xoa: ");
+                                    String maMon2 = CauHinh.SC.nextLine();
+                                    
+                                    ql.timKiem(id2).xoaMonHocTruoc(maMon2);
                                     break;
                                 case 4:
+                                    System.out.print("Nhap ma mon hoc muon them: ");
+                                    String maMon3 = CauHinh.SC.nextLine();
+                                    MonHoc mh3 = ql.timKiem(maMon3);
+                                    ql.timKiem(id2).themMonHocTienQuyet(mh3);
                                     break;
                                 case 5:
+                                    System.out.print("Nhap ma mon hoc muon xoa: ");
+                                    String maMon4 = CauHinh.SC.nextLine();
+                                    MonHoc mh4 = ql.timKiem(maMon4);
+                                    ql.timKiem(id2).themMonHocTienQuyet(mh4);
                                     break;
                                 case 6:
+                                    b.themCotDiemDeCuongChinhQuy();
                                     break;
                                 case 7:
+                                    b.xoaCotDiemDeCuongChinhQuy();
                                     break;
                                 case 0:
                                     break;
@@ -134,17 +151,27 @@ public class Menu {
                                     b.suaDeCuongLienThong();
                                     break;
                                 case 2:
-
+                                    System.out.print("Nhap ma mon hoc muon them: ");
+                                    String maMon1 = CauHinh.SC.nextLine();
+                                    MonHoc mh1 = ql.timKiem(maMon1);
+                                    ql.timKiem(id2).themMonHocTruoc(mh1);
                                     break;
                                 case 3:
                                     break;
                                 case 4:
+                                    System.out.print("Nhap ma mon hoc muon them: ");
+                                    String maMon2 = CauHinh.SC.nextLine();
+                                    MonHoc mh2 = ql.timKiem(maMon2);
+                                    ql.timKiem(id2).themMonHocTienQuyet(mh2);
                                     break;
                                 case 5:
+                                    
                                     break;
                                 case 6:
+                                    b.themCotDiemDeCuongLienThong();
                                     break;
                                 case 7:
+                                    b.xoaCotDiemDeCuongLienThong();
                                     break;
                                 case 0:
                                     break;

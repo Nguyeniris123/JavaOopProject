@@ -32,6 +32,10 @@ public class QuanLiMonHoc {
     public MonHoc timKiem(String kw) {
         return this.mh.stream().filter(h -> h.getMaMonHoc().equals(kw) || h.getTenMonHoc().contains(kw)).findFirst().orElse(null);
     }
+    
+    public void xoaMonHoc(String ma) {
+        this.mh.removeIf(h -> h.getMaMonHoc().equals(ma));
+    }
 
     public MonHoc timKiem(int maMonHoc) {
         String str = Integer.toString(maMonHoc);

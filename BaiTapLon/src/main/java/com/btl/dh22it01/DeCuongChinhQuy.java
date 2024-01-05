@@ -41,6 +41,19 @@ public class DeCuongChinhQuy extends DeCuong {
     }
 
     @Override
+    public void nhapCotDiem(CotDiem cotDiem) {
+        super.nhapCotDiem(cotDiem);
+        System.out.printf("DA THEM COT DIEM DE CUONG MON %s HE CHINH QUY\n", this.monHoc.getTenMonHoc());
+    }
+
+    @Override
+    public void xoaCotDiem() {
+        super.xoaCotDiem();
+    }
+    
+    
+    
+    @Override
     public void hienThiDeCuong() {
         System.out.println("DE CUONG CHINH QUY");
         this.monHoc.hienThiMonHoc();

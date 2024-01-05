@@ -65,6 +65,17 @@ public abstract class DeCuong {
             this.CotDiemList.add(cotDiem);
         }
     }
+    
+    public void xoaCotDiem() {
+        System.out.print("Nhap vi tri can xoa: ");
+        int soThuTuXoa = CauHinh.SC.nextByte();
+        if (soThuTuXoa >= 1 && soThuTuXoa <= CotDiemList.size()) {
+            CotDiemList.remove(soThuTuXoa - 1);
+            System.out.println("Cot diem da duoc xoa");
+        } else {
+            System.out.println("Số thứ tự không hợp lệ.");
+        }
+    }
 
     public void hienThiDsCotDiem() {
         this.CotDiemList.forEach(h -> h.hienThiCotDiem());
