@@ -9,7 +9,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.Reader;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.util.ArrayList;
@@ -126,10 +125,23 @@ public class QuanLiMonHoc {
 
         }
     }
+    
+    
+    public List<MonHoc> timListMonHocTienQuyet(MonHoc monHoc){
+        
+        return  this.mh.stream().filter(p->p.getMonHocTienQuyet().getMh().stream().anyMatch(q->q.equals(monHoc))).collect(Collectors.toList());
+        
+        
+    }
+    
+    public List<MonHoc> timListMonHocTruoc(MonHoc monHoc){
+        
+        return  this.mh.stream().filter(p->p.getMonHocTruoc().getMh().stream().anyMatch(q->q.equals(monHoc))).collect(Collectors.toList());
+        
+        
+    }
 
-    /**
-     * @return the mh
-     */
+    
     public List<MonHoc> getMh() {
         return mh;
     }

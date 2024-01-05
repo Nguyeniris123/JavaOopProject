@@ -118,7 +118,16 @@ public class MonHoc {
             System.out.println("Mon nay chua co de cuong he chinh quy");
         }
     }
+    
+    public void timKiemDSMonHocTruoc(){
+        
+    }
+    
+    public void timKiemDSMonHocTienQuyet(){
+        
+    }
 
+    
     public void hienThiDeCuongLienThong() {
         if (this.danhSachDeCuong.getDS().stream().anyMatch(p -> p.kiemTraLoaiDeCuong() == true) == true) {
             this.danhSachDeCuong.getDS().forEach(p -> {
