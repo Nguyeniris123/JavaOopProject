@@ -21,20 +21,24 @@ public class DeCuongChinhQuy extends DeCuong {
 
     public DeCuongChinhQuy(MonHoc monHoc) {
         super(monHoc);
-        
+
     }
 
     DeCuongChinhQuy() {
-        
+
     }
 
     @Override
-	public void khoiTaoDeCuong() {
-		
-		System.out.printf("KHOI TAO DE CUONG MON %s HE CHINH QUY\n",this.monHoc.getTenMonHoc());
-		super.khoiTaoDeCuong();
-		
-	}
+    public void khoiTaoDeCuong() {
+        System.out.printf("KHOI TAO DE CUONG MON %s HE CHINH QUY\n", this.monHoc.getTenMonHoc());
+        super.khoiTaoDeCuong();
+    }
+
+    @Override
+    public void suaNoiDung() {       
+        super.suaNoiDung(); 
+        System.out.printf("DA SUA NOI DUNG DE CUONG MON %s HE CHINH QUY\n", this.monHoc.getTenMonHoc());
+    }
 
     @Override
     public void hienThiDeCuong() {
@@ -43,7 +47,6 @@ public class DeCuongChinhQuy extends DeCuong {
         this.thongTinDeCuong();
         this.hienThiDsCotDiem();
 
-        CauHinh.SC.nextLine();
         System.out.println("An ENTER de tiep tuc! ");
         CauHinh.SC.nextLine();
     }

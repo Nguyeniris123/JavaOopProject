@@ -26,7 +26,7 @@ public class Menu {
         do {
             System.out.println("===== Menu =====");
             System.out.println("1. Tao de cuong cho mon hoc");
-            System.out.println("2. Cap nhat thong tin trong de cuong duoc phan cong");
+            System.out.println("2. Cap nhat thong tin de cuong");
             System.out.println("3. Tim kiem mon hoc");
             System.out.println("4. Xac dinh mon hoc");
             System.out.println("5. Sap xep danh sach de cuong giam dan");
@@ -43,8 +43,8 @@ public class Menu {
                 case 1:
                     CauHinh.SC.nextLine();
                     System.out.print("Nhap ma mon: ");
-                    String id = CauHinh.SC.nextLine();
-                    MonHoc a=ql.timKiem(id);
+                    String id1 = CauHinh.SC.nextLine();
+                    MonHoc a = ql.timKiem(id1);
                     System.out.println("1. Tao de cuong chinh quy");
                     System.out.println("2. Tao de cuong lien thong");
                     System.out.println("0. Thoat");
@@ -53,14 +53,11 @@ public class Menu {
                     int c1 = CauHinh.SC.nextByte();
                     CauHinh.SC.nextLine();
                     switch (c1) {
-
                         case 1:
                             a.khoiTaoDeCuongChinhQuy();
-
                             break;
                         case 2:
                             a.khoiTaoDeCuongLienThong();
-
                             break;
                         case 0:
                             break;
@@ -69,7 +66,99 @@ public class Menu {
                     }
                     break;
                 case 2:
+                    CauHinh.SC.nextLine();
+                    System.out.print("Nhap ma mon: ");
+                    String id2 = CauHinh.SC.nextLine();
+                    MonHoc b = ql.timKiem(id2);
+                    System.out.println("1. Cap nhat cuong chinh quy");
+                    System.out.println("2. Cap nhat cuong lien thong");
+                    System.out.println("0. Thoat");
+                    System.out.println("================");
+                    System.out.print("Moi ban chon: ");
 
+                    int c2 = CauHinh.SC.nextByte();
+                    CauHinh.SC.nextLine();
+                    switch (c2) {
+                        case 1:
+                            System.out.println("1. Chinh sua noi dung de cuong");
+                            System.out.println("2. Them mon hoc truoc");
+                            System.out.println("3. Xoa mon hoc truoc");
+                            System.out.println("4. Them mon hoc tien quyet");
+                            System.out.println("5. Xoa mon hoc tien quyet");
+                            System.out.println("6. Them cot diem");
+                            System.out.println("7. Xoa cot diem");
+                            System.out.println("0. Thoat");
+                            System.out.println("================");
+                            System.out.print("Moi ban chon: ");
+                            int c21 = CauHinh.SC.nextByte();
+                            CauHinh.SC.nextLine();
+                            switch (c21) {
+                                case 1:
+                                    b.suaDeCuongChinhQuy();
+                                    break;
+                                case 2:
+
+                                    break;
+                                case 3:
+                                    break;
+                                case 4:
+                                    break;
+                                case 5:
+                                    break;
+                                case 6:
+                                    break;
+                                case 7:
+                                    break;
+                                case 0:
+                                    break;
+                                default:
+                                    System.out.println("SAI CU PHAP VUI LONG NHAP LAI!!!");
+                                    break;
+                            }
+                            break;
+                        case 2:
+                            System.out.println("1. Chinh sua noi dung de cuong");
+                            System.out.println("2. Them mon hoc truoc");
+                            System.out.println("3. Xoa mon hoc truoc");
+                            System.out.println("4. Them mon hoc tien quyet");
+                            System.out.println("5. Xoa mon hoc tien quyet");
+                            System.out.println("6. Them cot diem");
+                            System.out.println("7. Xoa cot diem");
+                            System.out.println("0. Thoat");
+                            System.out.println("================");
+                            System.out.print("Moi ban chon: ");
+                            int c22 = CauHinh.SC.nextByte();
+                            CauHinh.SC.nextLine();
+                            switch (c22) {
+                                case 1:
+                                    b.suaDeCuongLienThong();
+                                    break;
+                                case 2:
+
+                                    break;
+                                case 3:
+                                    break;
+                                case 4:
+                                    break;
+                                case 5:
+                                    break;
+                                case 6:
+                                    break;
+                                case 7:
+                                    break;
+                                case 0:
+                                    break;
+                                default:
+                                    System.out.println("SAI CU PHAP VUI LONG NHAP LAI!!!");
+                                    break;
+                            }
+                            break;
+                        case 0:
+                            break;
+                        default:
+                            System.out.println("SAI CU PHAP VUI LONG NHAP LAI!!!");
+                            break;
+                    }
                     break;
                 case 3:
                     System.out.println("1. Tim kiem mon hoc theo ma hoac theo ten");
@@ -82,8 +171,8 @@ public class Menu {
                     switch (c3) {
                         case 1:
                             System.out.print("Nhap ma mon hoc hoac ten mon hoc: ");
-                            String kw = CauHinh.SC.nextLine();
-                            ql.timKiem(kw).hienThiMonHoc();
+                            String id3 = CauHinh.SC.nextLine();
+                            ql.timKiem(id3).hienThiMonHoc();
                             break;
                         case 0:
                             break;
@@ -94,7 +183,7 @@ public class Menu {
                 case 4:
                     CauHinh.SC.nextLine();
                     System.out.print("Nhap ma mon: ");
-                    String mamon = CauHinh.SC.nextLine();
+                    String id4 = CauHinh.SC.nextLine();
 
                     System.out.println("================");
                     System.out.println("1. Danh sach mon hoc truoc");
@@ -106,10 +195,10 @@ public class Menu {
                     CauHinh.SC.nextLine();
                     switch (c4) {
                         case 1:
-                            ql.timKiem(mamon).hienThiDSMonHocTruoc();
+                            ql.timKiem(id4).hienThiDSMonHocTruoc();
                             break;
                         case 2:
-                            ql.timKiem(mamon).hienThiDSMonHocTienQuyet();
+                            ql.timKiem(id4).hienThiDSMonHocTienQuyet();
                             break;
                         case 0:
                             break;
@@ -126,8 +215,8 @@ public class Menu {
                 case 7:
                     CauHinh.SC.nextLine();
                     System.out.print("Nhap ma mon: ");
-                    String mamon1 = CauHinh.SC.nextLine();
-                    MonHoc b= ql.timKiem(mamon1);
+                    String id7 = CauHinh.SC.nextLine();
+                    MonHoc g = ql.timKiem(id7);
                     System.out.println("1. Xuat de cuong chinh quy");
                     System.out.println("2. Xuat De cuong lien thong");
                     System.out.println("0. Thoat");
@@ -137,10 +226,10 @@ public class Menu {
                     CauHinh.SC.nextLine();
                     switch (c7) {
                         case 1:
-                            b.hienThiDeCuongChinhQuy();
+                            g.hienThiDeCuongChinhQuy();
                             break;
                         case 2:
-                            b.hienThiDeCuongLienThong();
+                            g.hienThiDeCuongLienThong();
                             break;
                         case 0:
                             break;

@@ -12,16 +12,14 @@ import java.util.List;
  * @author NGUYEN
  */
 public abstract class DeCuong {
-
     protected MonHoc monHoc;
-protected String mucTieu;
+    protected String mucTieu;
     protected String chuanDauRa;
     protected String noiDung;
-    private GiangVien giangVien;
+    protected GiangVien giangVien;
     protected List<CotDiem> CotDiemList = new ArrayList<>(4);
 
-    public DeCuong(MonHoc monHoc, String mucTieu, String chuanDauRa, String noiDung,
-            GiangVien giangVien) {
+    public DeCuong(MonHoc monHoc, String mucTieu, String chuanDauRa, String noiDung, GiangVien giangVien) {
         this.monHoc = monHoc;
         this.mucTieu = mucTieu;
         this.chuanDauRa = chuanDauRa;
@@ -37,7 +35,6 @@ protected String mucTieu;
         
     }
 	
-
     public void khoiTaoDeCuong() {
 	System.out.print("Muc tieu: ");
         this.mucTieu = CauHinh.SC.nextLine();
@@ -56,23 +53,17 @@ protected String mucTieu;
             }
         } while (n > 4 || n < 2);
         for (int i = 1; i <= n; i++) {
-        	System.out.println("+---------------------------------------+");
+            System.out.println("+---------------------------------------+");
             System.out.println("COT DIEM THU " + i);
             this.nhapCotDiem(new CotDiem());
         }
-	}
-	
-
+    }
+    
     public void nhapCotDiem(CotDiem cotDiem) {
         if (this.CotDiemList.size() < 4) {
             cotDiem.nhap1CotDiem();
             this.CotDiemList.add(cotDiem);
         }
-    }
-    public boolean kiemTraLoaiDeCuong() {
-		if(this instanceof DeCuongLienThong)
-			return true;
-		return false;
     }
 
     public void hienThiDsCotDiem() {
@@ -85,8 +76,29 @@ protected String mucTieu;
         System.out.printf("Noi dung: %s\n", this.noiDung);
         System.out.printf("Giang vien: %s\n", this.getGiangVien());
     }
-
     
+    public boolean kiemTraLoaiDeCuong() {
+	if(this instanceof DeCuongLienThong)
+            return true;
+	return false;
+    }
+    
+    public void suaNoiDung() {
+        System.out.print("Nhap muc tieu moi: ");
+        String mucTieuMoi = CauHinh.SC.nextLine();
+        this.mucTieu = mucTieuMoi;
+        System.out.println("Muc tieu da duoc cap nhat");
+        
+        System.out.print("Nhap chuan dau ra moi: ");
+        String chuanDauRaMoi = CauHinh.SC.nextLine();
+        this.chuanDauRa = chuanDauRaMoi;
+        System.out.println("Chuan dau ra da duoc cap nhat");
+        
+        System.out.print("Nhap noi dung moi: ");
+        String noiDungMoi = CauHinh.SC.nextLine();
+        this.noiDung = noiDungMoi;
+        System.out.println("Noi dung da duoc cap nhat");
+    }
 
     public abstract void hienThiDeCuong();
 
@@ -146,8 +158,6 @@ protected String mucTieu;
         this.noiDung = noiDung;
     }
 
-    
-
     /**
      * @return the CotDiemList
      */
@@ -175,8 +185,4 @@ protected String mucTieu;
     public void setGiangVien(GiangVien giangVien) {
         this.giangVien = giangVien;
     }
-
-    /**
-     * @return the cotDiem
-     */
 }
