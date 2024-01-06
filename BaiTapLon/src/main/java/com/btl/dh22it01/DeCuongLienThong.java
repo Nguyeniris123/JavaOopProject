@@ -22,34 +22,34 @@ public class DeCuongLienThong extends DeCuong {
     public DeCuongLienThong(MonHoc monHoc) {
         super(monHoc);
     }
-    
-    public DeCuongLienThong(){
-        
+
+    public DeCuongLienThong() {
+
     }
 
     @Override
-	public void khoiTaoDeCuong() {		
-            System.out.printf("KHOI TAO DE CUONG MON %s HE LIEN THONG\n",this.monHoc.getTenMonHoc());
-            super.khoiTaoDeCuong();		
-	}
+    public void khoiTaoDeCuong() {
+        System.out.printf("KHOI TAO DE CUONG MON %s HE LIEN THONG\n", this.monHoc.getTenMonHoc());
+        super.khoiTaoDeCuong();
+    }
 
     @Override
-    public void suaNoiDung() {       
-        super.suaNoiDung(); 
+    public void suaNoiDung() {
+        super.suaNoiDung();
         System.out.printf("DA SUA NOI DUNG DE CUONG MON %s HE LIEN THONG\n", this.monHoc.getTenMonHoc());
-    }    
-    
+    }
+
     @Override
     public void nhapCotDiem(CotDiem cotDiem) {
         super.nhapCotDiem(cotDiem);
         System.out.printf("DA THEM COT DIEM DE CUONG MON %s HE LIEN THONG\n", this.monHoc.getTenMonHoc());
     }
-    
+
     @Override
     public void xoaCotDiem() {
         super.xoaCotDiem();
     }
-        
+
     @Override
     public void hienThiDeCuong() {
         System.out.println("DE CUONG LIEN THONG");

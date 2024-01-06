@@ -309,5 +309,4 @@ public class MonHoc {
     public void setMonHocTruoc(QuanLiMonHoc monHocTruoc) {
         this.monHocTruoc = monHocTruoc;
     }
-
 }

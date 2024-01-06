@@ -12,14 +12,6 @@ import java.io.FileNotFoundException;
 public class Menu {
 
     public Menu() throws FileNotFoundException {
-//        MonHoc mh1 = new MonHoc("1", "Co so lap trinh", "Co ban C", 4, "Co so nganh");
-//        MonHoc mh3 = new MonHoc("1", "Ky thuat lap trinh", "Co ban C", 4, "Co so nganh");
-//        DeCuong dc1 = new DeCuongChinhQuy(mh1);
-//        DeCuong dc2 = new DeCuongLienThong(mh1);       
-//        MonHoc mh2 = new MonHoc("Ky thuat lap trinh");
-//        mh1.themMonHocTruoc(mh3);
-//        
-//        ql.themMonHoc(mh1, mh3);
         QuanLiMonHoc ql = new QuanLiMonHoc();
         ql.docDsMonHoc();
         ql.hienThiDSTenMonHoc_1();

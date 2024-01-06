@@ -26,7 +26,7 @@ public class GiangVien {
         this.tenGiangVien = tenGiangVien;
     }
     
-    
+  
     /**
      * @return the maGiangVien
      */
