@@ -31,17 +31,25 @@ public class QuanLiMonHoc {
     public MonHoc timKiem(String kw) {
         return this.mh.stream().filter(h -> h.getMaMonHoc().equals(kw) || h.getTenMonHoc().contains(kw)).findFirst().orElse(null);
     }
-    
-    public void xoaMonHoc(String ma) {
-        this.mh.removeIf(h -> h.getMaMonHoc().equals(ma));
-    }
 
     public MonHoc timKiem(int maMonHoc) {
         String str = Integer.toString(maMonHoc);
         char[] arr = str.toCharArray();
         return this.mh.stream().filter(p -> Character.compare(arr[0], p.getMaMonHoc().toCharArray()[p.getMaMonHoc().length() - 1]) == 0).findFirst().orElse(null);
     }
+    
+    public List<MonHoc> timListMonHocTienQuyet(MonHoc monHoc){
+        return  this.mh.stream().filter(p->p.getMonHocTienQuyet().getMh().stream().anyMatch(q->q.equals(monHoc))).collect(Collectors.toList());
+    }
+    
+    public List<MonHoc> timListMonHocTruoc(MonHoc monHoc){       
+        return  this.mh.stream().filter(p->p.getMonHocTruoc().getMh().stream().anyMatch(q->q.equals(monHoc))).collect(Collectors.toList());  
+    }
 
+    public void xoaMonHoc(String ma) {
+        this.mh.removeIf(h -> h.getMaMonHoc().equals(ma));
+    }
+    
     public void hienThiDsThongTinMonHoc() {
         this.mh.forEach(h -> h.hienThiMonHoc());
     }
@@ -64,7 +72,6 @@ public class QuanLiMonHoc {
 
     public void hienThiDSTenMonHoc_1() {
         this.mh.forEach(p -> System.out.printf("%s(%s)\n", p.getTenMonHoc(), p.getMaMonHoc()));
-
     }
 
     public void docDsMonHoc() throws FileNotFoundException {
@@ -125,22 +132,6 @@ public class QuanLiMonHoc {
 
         }
     }
-    
-    
-    public List<MonHoc> timListMonHocTienQuyet(MonHoc monHoc){
-        
-        return  this.mh.stream().filter(p->p.getMonHocTienQuyet().getMh().stream().anyMatch(q->q.equals(monHoc))).collect(Collectors.toList());
-        
-        
-    }
-    
-    public List<MonHoc> timListMonHocTruoc(MonHoc monHoc){
-        
-        return  this.mh.stream().filter(p->p.getMonHocTruoc().getMh().stream().anyMatch(q->q.equals(monHoc))).collect(Collectors.toList());
-        
-        
-    }
-
     
     public List<MonHoc> getMh() {
         return mh;

@@ -100,25 +100,23 @@ public class Menu {
                                     System.out.print("Nhap ma mon hoc muon them: ");
                                     String maMon1 = CauHinh.SC.nextLine();
                                     MonHoc mh1 = ql.timKiem(maMon1);
-                                    ql.timKiem(id2).themMonHocTruoc(mh1);
+                                    ql.timKiem(id2).themMonHocTruoc(mh1);                                    
                                     break;
                                 case 3:
                                     System.out.print("Nhap ma mon hoc muon xoa: ");
-                                    String maMon2 = CauHinh.SC.nextLine();
-                                    
+                                    String maMon2 = CauHinh.SC.nextLine();                                   
                                     ql.timKiem(id2).xoaMonHocTruoc(maMon2);
                                     break;
                                 case 4:
                                     System.out.print("Nhap ma mon hoc muon them: ");
                                     String maMon3 = CauHinh.SC.nextLine();
-                                    MonHoc mh3 = ql.timKiem(maMon3);
-                                    ql.timKiem(id2).themMonHocTienQuyet(mh3);
+                                    MonHoc mh2 = ql.timKiem(maMon3);
+                                    ql.timKiem(id2).themMonHocTienQuyet(mh2);
                                     break;
                                 case 5:
                                     System.out.print("Nhap ma mon hoc muon xoa: ");
-                                    String maMon4 = CauHinh.SC.nextLine();
-                                    MonHoc mh4 = ql.timKiem(maMon4);
-                                    ql.timKiem(id2).themMonHocTienQuyet(mh4);
+                                    String maMon4 = CauHinh.SC.nextLine();                                   
+                                    ql.timKiem(id2).xoaMonHocTruoc(maMon4);
                                     break;
                                 case 6:
                                     b.themCotDiemDeCuongChinhQuy();
@@ -155,17 +153,25 @@ public class Menu {
                                     String maMon1 = CauHinh.SC.nextLine();
                                     MonHoc mh1 = ql.timKiem(maMon1);
                                     ql.timKiem(id2).themMonHocTruoc(mh1);
+                                    System.out.print("Mon hoc da duoc them");
                                     break;
                                 case 3:
+                                    System.out.print("Nhap ma mon hoc muon xoa: ");
+                                    String maMon2 = CauHinh.SC.nextLine();                                   
+                                    ql.timKiem(id2).xoaMonHocTruoc(maMon2);
+                                    System.out.print("Mon hoc da duoc xoa");
                                     break;
                                 case 4:
                                     System.out.print("Nhap ma mon hoc muon them: ");
-                                    String maMon2 = CauHinh.SC.nextLine();
-                                    MonHoc mh2 = ql.timKiem(maMon2);
+                                    String maMon3 = CauHinh.SC.nextLine();
+                                    MonHoc mh2 = ql.timKiem(maMon3);
                                     ql.timKiem(id2).themMonHocTienQuyet(mh2);
                                     break;
                                 case 5:
-                                    
+                                    System.out.print("Nhap ma mon hoc muon xoa: ");
+                                    String maMon4 = CauHinh.SC.nextLine();                                   
+                                    ql.timKiem(id2).xoaMonHocTruoc(maMon4);
+                                    System.out.print("Mon hoc da duoc xoa");
                                     break;
                                 case 6:
                                     b.themCotDiemDeCuongLienThong();
@@ -213,8 +219,8 @@ public class Menu {
                     String id4 = CauHinh.SC.nextLine();
 
                     System.out.println("================");
-                    System.out.println("1. Danh sach mon hoc truoc");
-                    System.out.println("2. Danh sach mon hoc tien quyet");
+                    System.out.println("1. Danh sach ma no la mon hoc truoc");
+                    System.out.println("2. Danh sach ma no la mon hoc tien quyet");
                     System.out.println("0. Thoat");
                     System.out.println("================");
                     System.out.print("Moi ban chon: ");
@@ -222,10 +228,10 @@ public class Menu {
                     CauHinh.SC.nextLine();
                     switch (c4) {
                         case 1:
-                            ql.timKiem(id4).hienThiDSMonHocTruoc();
+                            ql.timListMonHocTruoc(ql.timKiem(id4)).forEach(p->p.hienThiMonHoc());
                             break;
                         case 2:
-                            ql.timKiem(id4).hienThiDSMonHocTienQuyet();
+                            ql.timListMonHocTienQuyet(ql.timKiem(id4)).forEach(p->p.hienThiMonHoc());
                             break;
                         case 0:
                             break;

@@ -55,10 +55,8 @@ public class MonHoc {
         }
     }
 
-    public void xoaMonHocTienQuyet(MonHoc monHoc) {
-        if (this.getMonHocTienQuyet().getMh().size() <= 3) {
-            this.getMonHocTienQuyet().themMonHoc(monHoc);
-        }
+    public void xoaMonHocTienQuyet(String ma) {
+        this.getMonHocTienQuyet().xoaMonHoc(ma);
     }
 
     public void hienThiMonHoc() {
@@ -74,7 +72,6 @@ public class MonHoc {
 
     public void hienThiDSMonHocTruoc() {
         if (!this.monHocTruoc.getMh().isEmpty()) {
-
             System.out.print("Danh sach mon hoc truoc: ");
             this.getMonHocTruoc().hienThiDSTenMonHoc();
         }
@@ -118,15 +115,6 @@ public class MonHoc {
             System.out.println("Mon nay chua co de cuong he chinh quy");
         }
     }
-    
-    public void timKiemDSMonHocTruoc(){
-        
-    }
-    
-    public void timKiemDSMonHocTienQuyet(){
-        
-    }
-
     
     public void hienThiDeCuongLienThong() {
         if (this.danhSachDeCuong.getDS().stream().anyMatch(p -> p.kiemTraLoaiDeCuong() == true) == true) {

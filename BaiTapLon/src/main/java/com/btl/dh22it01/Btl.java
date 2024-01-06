@@ -14,12 +14,12 @@ import java.io.FileNotFoundException;
 public class Btl {
 
     public static void main(String[] args) throws FileNotFoundException {
-       // Menu mn = new Menu();
-       QuanLiMonHoc ql = new QuanLiMonHoc();
-        ql.docDsMonHoc();
-        ql.timKiem(1).hienThiMonHoc();
-        System.out.println("com.btl.dh22it01.Btl.main()");
-        ql.timListMonHocTienQuyet(ql.timKiem(1)).forEach(p->p.hienThiMonHoc());
+        Menu mn = new Menu();
+//        QuanLiMonHoc ql = new QuanLiMonHoc();
+//        ql.docDsMonHoc();
+//        ql.timKiem(1).hienThiMonHoc();
+//        System.out.println("com.btl.dh22it01.Btl.main()");
+//        ql.timListMonHocTienQuyet(ql.timKiem(1)).forEach(p->p.hienThiMonHoc());
         
     }
 }
