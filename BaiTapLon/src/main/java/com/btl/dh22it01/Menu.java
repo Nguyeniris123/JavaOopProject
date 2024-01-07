@@ -22,7 +22,7 @@ public class Menu {
             System.out.println("3. Tim kiem mon hoc");
             System.out.println("4. Xac dinh mon hoc");
             System.out.println("5. Sap xep danh sach de cuong giam dan");
-            System.out.println("6. Xac dinh danh sach de cuong");
+            System.out.println("6. Xac dinh danh sach de cuong cua giang vien");
             System.out.println("7. Xuat de cuong");
             System.out.println("8. Thong ke so luong de cuong theo so tin chi");
             System.out.println("0. Thoat");

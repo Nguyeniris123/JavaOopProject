@@ -82,10 +82,12 @@ public abstract class DeCuong {
     }
 
     public void thongTinDeCuong() {
+        this.monHoc.hienThiMonHoc();
         System.out.printf("Muc tieu: %s\n", this.mucTieu);
         System.out.printf("Chuan dau ra: %s\n", this.chuanDauRa);
         System.out.printf("Noi dung: %s\n", this.noiDung);
         System.out.printf("Giang vien: %s\n", this.getGiangVien());
+        this.hienThiDsCotDiem();
     }
     
     public boolean kiemTraLoaiDeCuong() {

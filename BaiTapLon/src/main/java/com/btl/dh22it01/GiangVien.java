@@ -26,7 +26,17 @@ public class GiangVien {
         this.tenGiangVien = tenGiangVien;
     }
     
-  
+    public GiangVien() {
+        
+    }
+    
+    public void nhap1GiangVien() {
+        System.out.print("Ma giang vien: ");
+        this.maGiangVien = CauHinh.SC.nextByte();
+        System.out.print("Ten giang vien: ");
+        this.tenGiangVien = CauHinh.SC.nextLine();
+    }
+    
     /**
      * @return the maGiangVien
      */
