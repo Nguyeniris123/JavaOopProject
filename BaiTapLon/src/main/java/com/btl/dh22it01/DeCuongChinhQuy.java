@@ -56,10 +56,8 @@ public class DeCuongChinhQuy extends DeCuong {
     @Override
     public void hienThiDeCuong() {
         System.out.println("DE CUONG CHINH QUY");
-        
         this.thongTinDeCuong();
         
-
         System.out.println("An ENTER de tiep tuc! ");
         CauHinh.SC.nextLine();
     }

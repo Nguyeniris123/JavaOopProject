@@ -16,7 +16,7 @@ public abstract class DeCuong {
     protected String mucTieu;
     protected String chuanDauRa;
     protected String noiDung;
-    protected GiangVien giangVien;
+    protected GiangVien giangVien = new GiangVien();
     protected List<CotDiem> CotDiemList = new ArrayList<>(4);
 
     public DeCuong(MonHoc monHoc, String mucTieu, String chuanDauRa, String noiDung, GiangVien giangVien) {
@@ -43,6 +43,8 @@ public abstract class DeCuong {
         this.chuanDauRa = CauHinh.SC.nextLine();
         System.out.print("Noi dung: ");
         this.noiDung = CauHinh.SC.nextLine();
+     
+        this.giangVien.nhap1GiangVien();
         
         int n;
         do {
@@ -86,7 +88,8 @@ public abstract class DeCuong {
         System.out.printf("Muc tieu: %s\n", this.mucTieu);
         System.out.printf("Chuan dau ra: %s\n", this.chuanDauRa);
         System.out.printf("Noi dung: %s\n", this.noiDung);
-        System.out.printf("Giang vien: %s\n", this.getGiangVien());
+        System.out.print("Giang vien: ");
+        this.giangVien.hienThiGiangVien();
         this.hienThiDsCotDiem();
     }
     

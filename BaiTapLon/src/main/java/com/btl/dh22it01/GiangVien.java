@@ -33,8 +33,19 @@ public class GiangVien {
     public void nhap1GiangVien() {
         System.out.print("Ma giang vien: ");
         this.maGiangVien = CauHinh.SC.nextByte();
+        CauHinh.SC.nextLine();
         System.out.print("Ten giang vien: ");
         this.tenGiangVien = CauHinh.SC.nextLine();
+    }
+    
+    public void hienThiGiangVien() {
+        System.out.printf("%d - %s\n", this.maGiangVien, this.tenGiangVien);
+    }
+    
+    public void themDeCuong(DeCuong deCuong) {
+        if (this.getDeCuongList().size() <= 3) {
+            this.getDeCuongList().add(deCuong);
+        }
     }
     
     /**
