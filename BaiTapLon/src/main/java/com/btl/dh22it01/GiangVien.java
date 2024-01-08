@@ -22,8 +22,7 @@ public class GiangVien {
         this.maGiangVien=String.format("GV %03d", ++dem);
     }
 
-    public GiangVien(String tenGiangVien) {
-        
+    public GiangVien(String tenGiangVien) {        
         this.tenGiangVien = tenGiangVien;
         this.dsDeCuong= new QuanLyDeCuong();
     }
@@ -33,8 +32,7 @@ public class GiangVien {
         
     }
     
-    public void nhap1GiangVien() {
-        
+    public void nhap1GiangVien() {        
         System.out.print("Ten giang vien: ");
         this.tenGiangVien = CauHinh.SC.nextLine();
     }
@@ -43,8 +41,7 @@ public class GiangVien {
         System.out.printf("%s - %s\n", this.maGiangVien, this.tenGiangVien);
     }
     
-    public void themDeCuong(DeCuong deCuong) {
-        
+    public void themDeCuong(DeCuong deCuong) {        
             this.dsDeCuong.themDeCuong(deCuong);
     }
     

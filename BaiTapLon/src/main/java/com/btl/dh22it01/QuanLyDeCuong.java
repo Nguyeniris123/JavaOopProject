@@ -21,7 +21,6 @@ public class QuanLyDeCuong {
     }
 
     public void hienThi() {
-
         this.DS.forEach(d -> d.hienThiDeCuong());
     }
     
@@ -41,10 +40,8 @@ public class QuanLyDeCuong {
                 return 1;
             else{
                 return s1.getMonHoc().getMaMonHoc().compareTo(s2.getMonHoc().getMaMonHoc());
-            }
-                
-        });
-        
+            }              
+        });        
     }
 
     public void setDS(List<DeCuong> dS) {

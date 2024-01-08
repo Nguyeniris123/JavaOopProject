@@ -23,7 +23,6 @@ public class Test {
         a.timKiem(5).khoiTaoDeCuongLienThong(giangVien1);
         giangVien1.getDsDeCuong().hienThiDSTenDeCuong();
         giangVien1.getDsDeCuong().xapXepDSDeCuong();
-        giangVien1.getDsDeCuong().hienThiDSTenDeCuong();
-        
+        giangVien1.getDsDeCuong().hienThiDSTenDeCuong();        
     }
 }

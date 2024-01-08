@@ -54,8 +54,7 @@ public class DeCuongChinhQuy extends DeCuong {
 
     @Override
     public String toString() {
-       return "-"+"+"+this.monHoc.getTenMonHoc()+"+("+this.monHoc.getMaMonHoc()+")-"+"- so tin chi: "+this.monHoc.getSoTinChi()+" HE DAO TAO CHINH QUY";
-               
+       return "-"+"+"+this.monHoc.getTenMonHoc()+"+("+this.monHoc.getMaMonHoc()+")-"+"- so tin chi: "+this.monHoc.getSoTinChi()+" HE DAO TAO CHINH QUY";              
     }
     
     

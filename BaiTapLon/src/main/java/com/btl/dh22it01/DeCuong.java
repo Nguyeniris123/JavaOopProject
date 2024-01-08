@@ -44,9 +44,8 @@ public abstract class DeCuong {
         this.chuanDauRa = CauHinh.SC.nextLine();
         System.out.print("Noi dung: ");
         this.noiDung = CauHinh.SC.nextLine();
-     
-        
-        /*int n;
+            
+        int n;
         do {
             System.out.print("Nhap so cot Diem: ");
             n = Integer.parseInt(CauHinh.SC.nextLine());
@@ -59,7 +58,7 @@ public abstract class DeCuong {
             System.out.println("COT DIEM THU " + i);
             this.nhapCotDiem(new CotDiem());
         
-        }*/
+        }
     }
     
     public void nhapCotDiem(CotDiem cotDiem) {
@@ -117,11 +116,8 @@ public abstract class DeCuong {
         System.out.println("Noi dung da duoc cap nhat");
     }
 
-    @Override
     public abstract String toString();
     
-    
-
     public abstract void hienThiDeCuong();
 
     /**

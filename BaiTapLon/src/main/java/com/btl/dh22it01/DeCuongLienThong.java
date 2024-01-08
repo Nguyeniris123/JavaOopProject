@@ -50,9 +50,9 @@ public class DeCuongLienThong extends DeCuong {
         super.xoaCotDiem();
     }
     
+    @Override
     public String toString() {
-       return "+"+this.monHoc.getTenMonHoc()+"("+this.monHoc.getMaMonHoc()+")-"+"- so tin chi: "+this.monHoc.getSoTinChi()+" HE DAO TAO LIEN THONG";
-               
+       return "+"+this.monHoc.getTenMonHoc()+"("+this.monHoc.getMaMonHoc()+")-"+"- so tin chi: "+this.monHoc.getSoTinChi()+" HE DAO TAO LIEN THONG";               
     }
 
     @Override
