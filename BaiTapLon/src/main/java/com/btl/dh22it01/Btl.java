@@ -13,8 +13,7 @@ import java.io.FileNotFoundException;
  */
 public class Btl {
 
-//    public static void main(String[] args) throws FileNotFoundException {
-//        Menu mn = new Menu();
-//                
-//   }
+    public static void main(String[] args) throws FileNotFoundException {
+        Menu mn = new Menu();               
+   }
 }

@@ -45,15 +45,12 @@ public class QuanLyGiangVien {
             String duLieu=br.readLine();
             String []mangDuLieu=duLieu.split(",");
             for(int i=0;i<mangDuLieu.length;i++){
-                this.them(new GiangVien(mangDuLieu[i]));
-                
+                this.them(new GiangVien(mangDuLieu[i]));            
             }
             
         }catch (Exception e) {
             e.printStackTrace();
         }
-        
-
     }
     /**
      * @return the ds
@@ -67,10 +64,5 @@ public class QuanLyGiangVien {
      */
     public void setDs(List<GiangVien> ds) {
         this.ds = ds;
-    }
-
-    
-    
-    
-    
+    }  
 }

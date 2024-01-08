@@ -112,12 +112,14 @@ public class MonHoc {
         DeCuongChinhQuy a=(DeCuongChinhQuy) this.getDanhSachDeCuong().getDS().stream().filter(p-> p instanceof DeCuongChinhQuy ).findFirst().orElse(null);
         if(a!=null)
             a.hienThiDeCuong();
+        else System.out.println("Mon hoc nay chua co de cuong he Chinh quy!");
     }
     
     public void hienThiDeCuongLienThong() {
         DeCuongLienThong a=(DeCuongLienThong) this.getDanhSachDeCuong().getDS().stream().filter(p-> p instanceof DeCuongLienThong ).findFirst().orElse(null);
         if(a!=null)
             a.hienThiDeCuong();
+        else System.out.println("Mon hoc nay chua co de cuong he Lien Thong!");
     }
 
     public void suaDeCuongChinhQuy() {

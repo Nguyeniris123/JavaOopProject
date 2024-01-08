@@ -14,7 +14,7 @@ public class Menu {
     public Menu() throws FileNotFoundException {
         QuanLiMonHoc ql = new QuanLiMonHoc();
         ql.docDsMonHoc();
-        QuanLyGiangVien qlgv=new QuanLyGiangVien();
+        QuanLyGiangVien qlgv = new QuanLyGiangVien();
         qlgv.nhapThongTinGiangVienTuFile();
         qlgv.getDs().forEach(g->g.hienThiGiangVien());
         
@@ -235,7 +235,6 @@ public class Menu {
                     }
                     break;
                 case 4:
-                    CauHinh.SC.nextLine();
                     System.out.print("Nhap ma mon: ");
                     String id4 = CauHinh.SC.nextLine();
 
@@ -267,8 +266,7 @@ public class Menu {
                         System.out.println("Ma giang vien khong hop le! ");
                         break;
                     }
-                    gv5.getDsDeCuong().sapXepDSDeCuong();
-                    
+                    gv5.getDsDeCuong().sapXepDSDeCuong();                    
                     break;
                 case 6:
                     System.out.print("Nhap ma giang vien: ");
@@ -276,12 +274,10 @@ public class Menu {
                     if(gv6==null){
                         System.out.println("Ma giang vien khong hop le! ");
                         break;
-                    }
-                    
+                    }                   
                     gv6.getDsDeCuong().hienThiDSTenDeCuong();
                     break;
                 case 7:
-                    CauHinh.SC.nextLine();
                     System.out.print("Nhap ma mon: ");
                     String id7 = CauHinh.SC.nextLine();
                     MonHoc g = ql.timKiem(id7);
@@ -306,8 +302,17 @@ public class Menu {
                     }
                     break;
                 case 8:
+                    MonHoc mh1 = new MonHoc("Co So Lap Trinh", "Mon hoc co ban", 2, KhoiKienThuc.Chuyen_Nganh);
+                    MonHoc mh2 = new MonHoc("Ky Thuat Lap Trinh", "Mon hoc C++", 4, KhoiKienThuc.Chuyen_Nganh);
+                    MonHoc mh3 = new MonHoc("Huong Doi Tuong", "Mon hoc Java", 4, KhoiKienThuc.Chuyen_Nganh);
                     
-
+                    GiangVien gv8 = new GiangVien("Ho Chi Nguyen");
+                    DeCuong dc1 = new DeCuongChinhQuy(mh1, "1", "1", "1", gv8);
+                    DeCuong dc2 = new DeCuongChinhQuy(mh2, "1", "1", "1", gv8);
+                    DeCuong dc3 = new DeCuongChinhQuy(mh3, "1", "1", "1", gv8);
+                    QuanLyDeCuong qldc = new QuanLyDeCuong();
+                    qldc.themDeCuong(dc1, dc2, dc3);
+                    System.out.println(qldc.thongKeSoLuongDeCuongTheoSoTinChi(4));
                     break;
                 case 0:
                     System.out.println("CAM ON BAN DA SU DUNG CHUONG TRINH");

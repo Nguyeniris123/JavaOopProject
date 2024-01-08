@@ -82,5 +82,4 @@ public class CotDiem {
     public void setTyLe(double tyLe) {
         this.tyLe = tyLe;
     }
-
 }
