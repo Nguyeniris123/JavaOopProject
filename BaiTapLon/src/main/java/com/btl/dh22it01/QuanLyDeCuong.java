@@ -32,7 +32,7 @@ public class QuanLyDeCuong {
         return DS;
     }
     
-    public void xapXepDSDeCuong(){
+    public void sapXepDSDeCuong(){
         this.DS.sort((s1,s2)->{
             if(s1.getMonHoc().getSoTinChi()>s2.getMonHoc().getSoTinChi())
                 return -1;
@@ -43,7 +43,19 @@ public class QuanLyDeCuong {
             }              
         });        
     }
+    
+    public DeCuong traVeDeCuongChinhQuy(){
+        return this.DS.stream().filter(p->p instanceof DeCuongChinhQuy).findFirst().orElse(null);
+    }
 
+    public DeCuong traVeDeCuongLienThong(){
+        return this.DS.stream().filter(p->p instanceof DeCuongLienThong).findFirst().orElse(null);
+    }    
+    
+    public double thongKeSoLuongDeCuongTheoSoTinChi(int soTinChi) {
+        return this.DS.stream().filter(deCuong -> deCuong.getMonHoc().getSoTinChi() == soTinChi).count();
+    }
+    
     public void setDS(List<DeCuong> dS) {
         DS = dS;
     }

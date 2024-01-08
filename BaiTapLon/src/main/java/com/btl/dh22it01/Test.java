@@ -22,7 +22,8 @@ public class Test {
         a.timKiem(4).khoiTaoDeCuongLienThong(giangVien1);
         a.timKiem(5).khoiTaoDeCuongLienThong(giangVien1);
         giangVien1.getDsDeCuong().hienThiDSTenDeCuong();
-        giangVien1.getDsDeCuong().xapXepDSDeCuong();
-        giangVien1.getDsDeCuong().hienThiDSTenDeCuong();        
+        System.out.println(giangVien1.getDsDeCuong().thongKeSoLuongDeCuongTheoSoTinChi(1));
+                
+          
     }
 }

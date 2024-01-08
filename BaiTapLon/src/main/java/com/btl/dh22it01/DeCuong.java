@@ -45,20 +45,20 @@ public abstract class DeCuong {
         System.out.print("Noi dung: ");
         this.noiDung = CauHinh.SC.nextLine();
             
-        int n;
-        do {
-            System.out.print("Nhap so cot Diem: ");
-            n = Integer.parseInt(CauHinh.SC.nextLine());
-            if (n > 4 || n < 2) {
-                System.out.println("Khong hop le. Nhap lai");
-            }
-        } while (n > 4 || n < 2);
-        for (int i = 1; i <= n; i++) {
-            System.out.println("+---------------------------------------+");
-            System.out.println("COT DIEM THU " + i);
-            this.nhapCotDiem(new CotDiem());
-        
-        }
+//        int n;
+//        do {
+//            System.out.print("Nhap so cot Diem: ");
+//            n = Integer.parseInt(CauHinh.SC.nextLine());
+//            if (n > 4 || n < 2) {
+//                System.out.println("Khong hop le. Nhap lai");
+//            }
+//        } while (n > 4 || n < 2);
+//        for (int i = 1; i <= n; i++) {
+//            System.out.println("+---------------------------------------+");
+//            System.out.println("COT DIEM THU " + i);
+//            this.nhapCotDiem(new CotDiem());
+//        
+//        }
     }
     
     public void nhapCotDiem(CotDiem cotDiem) {

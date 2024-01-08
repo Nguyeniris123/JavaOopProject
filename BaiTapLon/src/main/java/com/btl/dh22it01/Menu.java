@@ -14,7 +14,10 @@ public class Menu {
     public Menu() throws FileNotFoundException {
         QuanLiMonHoc ql = new QuanLiMonHoc();
         ql.docDsMonHoc();
-        ql.hienThiDSTenMonHoc_1();
+        QuanLyGiangVien qlgv=new QuanLyGiangVien();
+        qlgv.nhapThongTinGiangVienTuFile();
+        qlgv.getDs().forEach(g->g.hienThiGiangVien());
+        
         
         do {
             System.out.println("===== Menu =====");
@@ -31,12 +34,17 @@ public class Menu {
 
             System.out.print("Moi ban chon: ");
             int choice = CauHinh.SC.nextByte();
-
+            CauHinh.SC.nextLine();
             switch (choice) {
                 case 1:
-                    GiangVien gv= new GiangVien();
-                    gv.nhap1GiangVien();
-                    CauHinh.SC.nextLine();
+                    System.out.print("Nhap ma giang vien: ");
+                    GiangVien gv1= qlgv.timKiem(CauHinh.SC.nextLine());
+                    if(gv1==null){
+                        System.out.println("Ma giang vien khong hop le! ");
+                        break;
+                    }
+                        
+                    
                     System.out.print("Nhap ma mon: ");
                     String id1 = CauHinh.SC.nextLine();
                     MonHoc a = ql.timKiem(id1);
@@ -49,10 +57,10 @@ public class Menu {
                     CauHinh.SC.nextLine();
                     switch (c1) {
                         case 1:
-                            a.khoiTaoDeCuongChinhQuy(gv);
+                            a.khoiTaoDeCuongChinhQuy(gv1);
                             break;
                         case 2:
-                            a.khoiTaoDeCuongLienThong(gv);
+                            a.khoiTaoDeCuongLienThong(gv1);
                             break;
                         case 0:
                             break;
@@ -61,7 +69,12 @@ public class Menu {
                     }
                     break;
                 case 2:
-                    CauHinh.SC.nextLine();
+                    System.out.print("Nhap ma giang vien: ");
+                    GiangVien gv2= qlgv.timKiem(CauHinh.SC.nextLine());
+                    if(gv2==null){
+                        System.out.println("Ma giang vien khong hop le! ");
+                        break;
+                    }
                     System.out.print("Nhap ma mon: ");
                     String id2 = CauHinh.SC.nextLine();
                     MonHoc b = ql.timKiem(id2);
@@ -70,8 +83,21 @@ public class Menu {
                     System.out.println("0. Thoat");
                     System.out.println("================");
                     System.out.print("Moi ban chon: ");
-
+                    
                     int c2 = CauHinh.SC.nextByte();
+                    if(c2==1)
+                        if(gv2.kiemTraGiangVien(b.getDanhSachDeCuong().traVeDeCuongChinhQuy())==false){
+                            System.out.println("De cuong khong hop le!\n");
+                            break;
+                        }
+                    if(c2==2)
+                        if(gv2.kiemTraGiangVien(b.getDanhSachDeCuong().traVeDeCuongLienThong())==false){
+                            System.out.println("De cuong khong hop le!\n");
+                            break;
+                           
+                        }
+                    
+                    
                     CauHinh.SC.nextLine();
                     switch (c2) {
                         case 1:
@@ -235,10 +261,24 @@ public class Menu {
                     }
                     break;
                 case 5:
-
+                    System.out.print("Nhap ma giang vien: ");
+                    GiangVien gv5= qlgv.timKiem(CauHinh.SC.nextLine());
+                    if(gv5==null){
+                        System.out.println("Ma giang vien khong hop le! ");
+                        break;
+                    }
+                    gv5.getDsDeCuong().sapXepDSDeCuong();
+                    
                     break;
                 case 6:
-
+                    System.out.print("Nhap ma giang vien: ");
+                    GiangVien gv6= qlgv.timKiem(CauHinh.SC.nextLine());
+                    if(gv6==null){
+                        System.out.println("Ma giang vien khong hop le! ");
+                        break;
+                    }
+                    
+                    gv6.getDsDeCuong().hienThiDSTenDeCuong();
                     break;
                 case 7:
                     CauHinh.SC.nextLine();
@@ -266,6 +306,7 @@ public class Menu {
                     }
                     break;
                 case 8:
+                    
 
                     break;
                 case 0:

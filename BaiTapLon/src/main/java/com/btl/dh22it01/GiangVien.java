@@ -19,7 +19,7 @@ public class GiangVien {
     private QuanLyDeCuong dsDeCuong;
     
     {
-        this.maGiangVien=String.format("GV %03d", ++dem);
+        this.setMaGiangVien(String.format("GV%03d", ++dem));
     }
 
     public GiangVien(String tenGiangVien) {        
@@ -38,11 +38,19 @@ public class GiangVien {
     }
     
     public void hienThiGiangVien() {
-        System.out.printf("%s - %s\n", this.maGiangVien, this.tenGiangVien);
+        System.out.printf("%s - %s\n", this.getMaGiangVien(), this.tenGiangVien);
     }
     
     public void themDeCuong(DeCuong deCuong) {        
             this.dsDeCuong.themDeCuong(deCuong);
+    }
+    
+    public boolean kiemTraGiangVien(DeCuong deCuong){
+        if(deCuong==null)
+            return false;
+        return this.dsDeCuong.getDS().stream().anyMatch(d->d.equals(deCuong));
+                
+        
     }
     
     /**
@@ -63,6 +71,8 @@ public class GiangVien {
     public void setTenGiangVien(String tenGiangVien) {
         this.tenGiangVien = tenGiangVien;
     }
+    
+    
 
     /**
      * @return the dsDeCuong
@@ -79,7 +89,23 @@ public class GiangVien {
     }
 
     /**
+     * @return the maGiangVien
+     */
+    public String getMaGiangVien() {
+        return maGiangVien;
+    }
+
+    /**
+     * @param maGiangVien the maGiangVien to set
+     */
+    public void setMaGiangVien(String maGiangVien) {
+        this.maGiangVien = maGiangVien;
+    }
+
+    /**
      * @return the deCuongList
      */
+    
+    
     
 }
