@@ -1,9 +1,9 @@
-Cau truc du lieu, Mon hoc co ban, 4, 1
-Ky thuat lap trinh, Mon hoc co ban, 4, 2
+Cau truc du lieu, Mon hoc co ban, 1, 1
+Ky thuat lap trinh, Mon hoc co ban, 2, 2
 Co so lap trinh, Mon hoc nhap mon, 3, 3
-Dai so tuyen tinh, Mon hoc co so, 4, 1
-Giai tich, Mon hoc them, 4, 2
-Xac suat thong ke, Mon hoc nhap mon, 4, 3
-Dai so tuyen tinh, Mon hoc co so, 4, 1
-Giai tich, Mon hoc them, 4, 2
-Xac suat thong ke, Mon hoc nhap mon, 4, 3
+Dai so tuyen tinh, Mon hoc co so, 3, 1
+Giai tich, Mon hoc them, 3, 2
+Xac suat thong ke, Mon hoc nhap mon, 3, 3
+Dai so tuyen tinh, Mon hoc co so, 1, 1
+Giai tich, Mon hoc them, 2, 2
+Xac suat thong ke, Mon hoc nhap mon, 1, 3

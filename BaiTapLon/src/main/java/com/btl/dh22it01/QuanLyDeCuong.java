@@ -24,9 +24,27 @@ public class QuanLyDeCuong {
 
         this.DS.forEach(d -> d.hienThiDeCuong());
     }
-
+    
+    public void hienThiDSTenDeCuong(){
+        this.DS.forEach(d->System.out.println(d));
+    }
+    
     public List<DeCuong> getDS() {
         return DS;
+    }
+    
+    public void xapXepDSDeCuong(){
+        this.DS.sort((s1,s2)->{
+            if(s1.getMonHoc().getSoTinChi()>s2.getMonHoc().getSoTinChi())
+                return -1;
+            else if(s1.getMonHoc().getSoTinChi()<s2.getMonHoc().getSoTinChi())
+                return 1;
+            else{
+                return s1.getMonHoc().getMaMonHoc().compareTo(s2.getMonHoc().getMaMonHoc());
+            }
+                
+        });
+        
     }
 
     public void setDS(List<DeCuong> dS) {

@@ -15,6 +15,7 @@ public class Menu {
         QuanLiMonHoc ql = new QuanLiMonHoc();
         ql.docDsMonHoc();
         ql.hienThiDSTenMonHoc_1();
+        
         do {
             System.out.println("===== Menu =====");
             System.out.println("1. Tao de cuong cho mon hoc");
@@ -33,6 +34,8 @@ public class Menu {
 
             switch (choice) {
                 case 1:
+                    GiangVien gv= new GiangVien();
+                    gv.nhap1GiangVien();
                     CauHinh.SC.nextLine();
                     System.out.print("Nhap ma mon: ");
                     String id1 = CauHinh.SC.nextLine();
@@ -46,10 +49,10 @@ public class Menu {
                     CauHinh.SC.nextLine();
                     switch (c1) {
                         case 1:
-                            a.khoiTaoDeCuongChinhQuy();
+                            a.khoiTaoDeCuongChinhQuy(gv);
                             break;
                         case 2:
-                            a.khoiTaoDeCuongLienThong();
+                            a.khoiTaoDeCuongLienThong(gv);
                             break;
                         case 0:
                             break;

@@ -84,56 +84,48 @@ public class MonHoc {
         }
     }
 
-    public void khoiTaoDeCuongChinhQuy() {
-        if (this.danhSachDeCuong.getDS().stream().anyMatch(p -> p.kiemTraLoaiDeCuong() == false) == false) {
-            DeCuongChinhQuy deCuong = new DeCuongChinhQuy(this);
+    public void khoiTaoDeCuongChinhQuy(GiangVien giangVien) {
+        if (this.getDanhSachDeCuong().getDS().stream().anyMatch(p -> p.kiemTraLoaiDeCuong() == false) == false
+                &&giangVien.getDsDeCuong().getDS().size()<=5) {
+            DeCuongChinhQuy deCuong = new DeCuongChinhQuy(this,giangVien);
             deCuong.khoiTaoDeCuong();
-            this.danhSachDeCuong.themDeCuong(deCuong);
+            this.getDanhSachDeCuong().themDeCuong(deCuong);
+            giangVien.getDsDeCuong().themDeCuong(deCuong);
         } else {
             System.out.println("Mon hoc nay da co de cuong he Chinh quy!");
         }
     }
 
-    public void khoiTaoDeCuongLienThong() {
-        if (this.danhSachDeCuong.getDS().stream().anyMatch(p -> p.kiemTraLoaiDeCuong() == true) == false) {
-            DeCuongLienThong deCuong = new DeCuongLienThong(this);
+    public void khoiTaoDeCuongLienThong(GiangVien giangVien) {
+        if (this.getDanhSachDeCuong().getDS().stream().anyMatch(p -> p.kiemTraLoaiDeCuong() == true) == false
+                &&giangVien.getDsDeCuong().getDS().size()<=5) {
+            DeCuongLienThong deCuong = new DeCuongLienThong(this,giangVien);
             deCuong.khoiTaoDeCuong();
-            this.danhSachDeCuong.themDeCuong(deCuong);
+            this.getDanhSachDeCuong().themDeCuong(deCuong);
+            giangVien.getDsDeCuong().themDeCuong(deCuong);
         } else {
             System.out.println("Mon hoc nay da co de cuong he lien thong!");
         }
     }
 
     public void hienThiDeCuongChinhQuy() {
-        if (this.danhSachDeCuong.getDS().stream().anyMatch(p -> p.kiemTraLoaiDeCuong() == false) == true) {
-            this.danhSachDeCuong.getDS().forEach(p -> {
-                if (p.kiemTraLoaiDeCuong() == false) {
-                    p.hienThiDeCuong();
-                }
-            });
-        } else {
-            System.out.println("Mon nay chua co de cuong he chinh quy");
-        }
+        DeCuongChinhQuy a=(DeCuongChinhQuy) this.getDanhSachDeCuong().getDS().stream().filter(p-> p instanceof DeCuongChinhQuy ).findFirst().orElse(null);
+        if(a!=null)
+            a.hienThiDeCuong();
     }
     
     public void hienThiDeCuongLienThong() {
-        if (this.danhSachDeCuong.getDS().stream().anyMatch(p -> p.kiemTraLoaiDeCuong() == true) == true) {
-            this.danhSachDeCuong.getDS().forEach(p -> {
-                if (p.kiemTraLoaiDeCuong() == true) {
-                    p.hienThiDeCuong();
-                }
-            });
-        } else {
-            System.out.println("Mon nay chua co de cuong he lien thong");
-        }
+        DeCuongLienThong a=(DeCuongLienThong) this.getDanhSachDeCuong().getDS().stream().filter(p-> p instanceof DeCuongLienThong ).findFirst().orElse(null);
+        if(a!=null)
+            a.hienThiDeCuong();
     }
 
     public void suaDeCuongChinhQuy() {
-        if (this.danhSachDeCuong.getDS().stream().anyMatch(p -> p.kiemTraLoaiDeCuong() == false) == false) {
+        if (this.getDanhSachDeCuong().getDS().stream().anyMatch(p -> p.kiemTraLoaiDeCuong() == false) == false) {
             System.out.println("Mon hoc nay chua co de cuong he Chinh quy!");
         } else {
             System.out.println("Mon hoc nay da co de cuong he Chinh quy!");
-            this.danhSachDeCuong.getDS().forEach(p -> {
+            this.getDanhSachDeCuong().getDS().forEach(p -> {
                 if (p.kiemTraLoaiDeCuong() == false) {
                     p.suaNoiDung();
                 }
@@ -142,11 +134,11 @@ public class MonHoc {
     }
     
     public void suaDeCuongLienThong() {
-        if (this.danhSachDeCuong.getDS().stream().anyMatch(p -> p.kiemTraLoaiDeCuong() == true) == false) {
+        if (this.getDanhSachDeCuong().getDS().stream().anyMatch(p -> p.kiemTraLoaiDeCuong() == true) == false) {
             System.out.println("Mon hoc nay chua co de cuong he Chinh quy!");
         } else {
             System.out.println("Mon hoc nay da co de cuong he Chinh quy!");
-            this.danhSachDeCuong.getDS().forEach(p -> {
+            this.getDanhSachDeCuong().getDS().forEach(p -> {
                 if (p.kiemTraLoaiDeCuong() == true) {
                     p.suaNoiDung();
                 }
@@ -155,11 +147,11 @@ public class MonHoc {
     }
     
     public void themCotDiemDeCuongChinhQuy() {
-        if (this.danhSachDeCuong.getDS().stream().anyMatch(p -> p.kiemTraLoaiDeCuong() == false) == false) {
+        if (this.getDanhSachDeCuong().getDS().stream().anyMatch(p -> p.kiemTraLoaiDeCuong() == false) == false) {
             System.out.println("Mon hoc nay chua co de cuong he Chinh quy!");
         } else {
             System.out.println("Mon hoc nay da co de cuong he Chinh quy!");
-            this.danhSachDeCuong.getDS().forEach(p -> {
+            this.getDanhSachDeCuong().getDS().forEach(p -> {
                 if (p.kiemTraLoaiDeCuong() == false) {
                     p.nhapCotDiem(new CotDiem());
                 }
@@ -168,11 +160,11 @@ public class MonHoc {
     }
     
     public void themCotDiemDeCuongLienThong() {
-        if (this.danhSachDeCuong.getDS().stream().anyMatch(p -> p.kiemTraLoaiDeCuong() == true) == false) {
+        if (this.getDanhSachDeCuong().getDS().stream().anyMatch(p -> p.kiemTraLoaiDeCuong() == true) == false) {
             System.out.println("Mon hoc nay chua co de cuong he Chinh quy!");
         } else {
             System.out.println("Mon hoc nay da co de cuong he Chinh quy!");
-            this.danhSachDeCuong.getDS().forEach(p -> {
+            this.getDanhSachDeCuong().getDS().forEach(p -> {
                 if (p.kiemTraLoaiDeCuong() == true) {
                     p.nhapCotDiem(new CotDiem());
                 }
@@ -181,11 +173,11 @@ public class MonHoc {
     }
     
     public void xoaCotDiemDeCuongChinhQuy() {
-        if (this.danhSachDeCuong.getDS().stream().anyMatch(p -> p.kiemTraLoaiDeCuong() == false) == false) {
+        if (this.getDanhSachDeCuong().getDS().stream().anyMatch(p -> p.kiemTraLoaiDeCuong() == false) == false) {
             System.out.println("Mon hoc nay chua co de cuong he Chinh quy!");
         } else {
             System.out.println("Mon hoc nay da co de cuong he Chinh quy!");
-            this.danhSachDeCuong.getDS().forEach(p -> {
+            this.getDanhSachDeCuong().getDS().forEach(p -> {
                 if (p.kiemTraLoaiDeCuong() == false) {
                     p.xoaCotDiem();
                 }
@@ -194,11 +186,11 @@ public class MonHoc {
     }
     
      public void xoaCotDiemDeCuongLienThong() {
-        if (this.danhSachDeCuong.getDS().stream().anyMatch(p -> p.kiemTraLoaiDeCuong() == true) == false) {
+        if (this.getDanhSachDeCuong().getDS().stream().anyMatch(p -> p.kiemTraLoaiDeCuong() == true) == false) {
             System.out.println("Mon hoc nay chua co de cuong he Chinh quy!");
         } else {
             System.out.println("Mon hoc nay da co de cuong he Chinh quy!");
-            this.danhSachDeCuong.getDS().forEach(p -> {
+            this.getDanhSachDeCuong().getDS().forEach(p -> {
                 if (p.kiemTraLoaiDeCuong() == true) {
                     p.xoaCotDiem();
                 }
@@ -309,4 +301,19 @@ public class MonHoc {
     public void setMonHocTruoc(QuanLiMonHoc monHocTruoc) {
         this.monHocTruoc = monHocTruoc;
     }
+
+    /**
+     * @return the danhSachDeCuong
+     */
+    public QuanLyDeCuong getDanhSachDeCuong() {
+        return danhSachDeCuong;
+    }
+
+    /**
+     * @param danhSachDeCuong the danhSachDeCuong to set
+     */
+    public void setDanhSachDeCuong(QuanLyDeCuong danhSachDeCuong) {
+        this.danhSachDeCuong = danhSachDeCuong;
+    }
+    
 }

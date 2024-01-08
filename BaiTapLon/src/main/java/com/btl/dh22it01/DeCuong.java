@@ -27,8 +27,9 @@ public abstract class DeCuong {
         this.giangVien = giangVien;
     }
 
-    public DeCuong(MonHoc monHoc) {
+    public DeCuong(MonHoc monHoc,GiangVien giangVien) {
 		this.monHoc=monHoc;
+                this.giangVien=giangVien;
     }
     
     public DeCuong(){
@@ -44,9 +45,8 @@ public abstract class DeCuong {
         System.out.print("Noi dung: ");
         this.noiDung = CauHinh.SC.nextLine();
      
-        this.giangVien.nhap1GiangVien();
         
-        int n;
+        /*int n;
         do {
             System.out.print("Nhap so cot Diem: ");
             n = Integer.parseInt(CauHinh.SC.nextLine());
@@ -58,7 +58,8 @@ public abstract class DeCuong {
             System.out.println("+---------------------------------------+");
             System.out.println("COT DIEM THU " + i);
             this.nhapCotDiem(new CotDiem());
-        }
+        
+        }*/
     }
     
     public void nhapCotDiem(CotDiem cotDiem) {
@@ -115,6 +116,11 @@ public abstract class DeCuong {
         this.noiDung = noiDungMoi;
         System.out.println("Noi dung da duoc cap nhat");
     }
+
+    @Override
+    public abstract String toString();
+    
+    
 
     public abstract void hienThiDeCuong();
 

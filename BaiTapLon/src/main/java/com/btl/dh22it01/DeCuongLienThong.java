@@ -19,8 +19,8 @@ public class DeCuongLienThong extends DeCuong {
         super(monHoc, mucTieu, chuanDauRa, noiDung, giangVien);
     }
 
-    public DeCuongLienThong(MonHoc monHoc) {
-        super(monHoc);
+    public DeCuongLienThong(MonHoc monHoc,GiangVien giangVien) {
+        super(monHoc,giangVien);
     }
 
     public DeCuongLienThong() {
@@ -48,6 +48,11 @@ public class DeCuongLienThong extends DeCuong {
     @Override
     public void xoaCotDiem() {
         super.xoaCotDiem();
+    }
+    
+    public String toString() {
+       return "+"+this.monHoc.getTenMonHoc()+"("+this.monHoc.getMaMonHoc()+")-"+"- so tin chi: "+this.monHoc.getSoTinChi()+" HE DAO TAO LIEN THONG";
+               
     }
 
     @Override

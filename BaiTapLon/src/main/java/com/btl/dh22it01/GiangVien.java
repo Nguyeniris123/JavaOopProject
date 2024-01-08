@@ -12,55 +12,46 @@ import java.util.List;
  * @author NGUYEN
  */
 public class GiangVien {
-    private int maGiangVien;
+    private static int dem;
+    private String maGiangVien;
     private String tenGiangVien;
     
-    private List<DeCuong> deCuongList = new ArrayList<>(5);
+    private QuanLyDeCuong dsDeCuong;
+    
+    {
+        this.maGiangVien=String.format("GV %03d", ++dem);
+    }
 
-    public GiangVien(int maGiangVien, String tenGiangVien) {
-        this.maGiangVien = maGiangVien;
+    public GiangVien(String tenGiangVien) {
+        
         this.tenGiangVien = tenGiangVien;
+        this.dsDeCuong= new QuanLyDeCuong();
     }
     
-    public GiangVien(String tenGiangVien) {
-        this.tenGiangVien = tenGiangVien;
-    }
     
     public GiangVien() {
         
     }
     
     public void nhap1GiangVien() {
-        System.out.print("Ma giang vien: ");
-        this.maGiangVien = CauHinh.SC.nextByte();
-        CauHinh.SC.nextLine();
+        
         System.out.print("Ten giang vien: ");
         this.tenGiangVien = CauHinh.SC.nextLine();
     }
     
     public void hienThiGiangVien() {
-        System.out.printf("%d - %s\n", this.maGiangVien, this.tenGiangVien);
+        System.out.printf("%s - %s\n", this.maGiangVien, this.tenGiangVien);
     }
     
     public void themDeCuong(DeCuong deCuong) {
-        if (this.getDeCuongList().size() <= 3) {
-            this.getDeCuongList().add(deCuong);
-        }
+        
+            this.dsDeCuong.themDeCuong(deCuong);
     }
     
     /**
      * @return the maGiangVien
      */
-    public int getMaGiangVien() {
-        return maGiangVien;
-    }
-
-    /**
-     * @param maGiangVien the maGiangVien to set
-     */
-    public void setMaGiangVien(int maGiangVien) {
-        this.maGiangVien = maGiangVien;
-    }
+    
 
     /**
      * @return the tenGiangVien
@@ -77,16 +68,21 @@ public class GiangVien {
     }
 
     /**
-     * @return the deCuongList
+     * @return the dsDeCuong
      */
-    public List<DeCuong> getDeCuongList() {
-        return deCuongList;
+    public QuanLyDeCuong getDsDeCuong() {
+        return dsDeCuong;
     }
 
     /**
-     * @param deCuongList the deCuongList to set
+     * @param dsDeCuong the dsDeCuong to set
      */
-    public void setDeCuongList(List<DeCuong> deCuongList) {
-        this.deCuongList = deCuongList;
+    public void setDsDeCuong(QuanLyDeCuong dsDeCuong) {
+        this.dsDeCuong = dsDeCuong;
     }
+
+    /**
+     * @return the deCuongList
+     */
+    
 }

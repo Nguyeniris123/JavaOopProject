@@ -4,17 +4,10 @@
  */
 package com.btl.dh22it01;
 
-import java.io.FileNotFoundException;
-
 /**
  *
- *
- * @author NGUYEN
+ * @author Tinylove
  */
-public class Btl {
-
-//    public static void main(String[] args) throws FileNotFoundException {
-//        Menu mn = new Menu();
-//                
-//    }
+public class QuanLyGiangVien {
+    
 }
