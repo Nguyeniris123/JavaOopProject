@@ -27,8 +27,6 @@ public class DeCuongChinhQuy extends DeCuong {
     public DeCuongChinhQuy() {
     }
 
-    
-
     @Override
     public void khoiTaoDeCuong() {
         System.out.printf("KHOI TAO DE CUONG MON %s HE CHINH QUY\n", this.monHoc.getTenMonHoc());

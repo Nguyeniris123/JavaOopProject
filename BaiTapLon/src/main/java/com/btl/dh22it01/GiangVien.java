@@ -15,7 +15,6 @@ public class GiangVien {
     private static int dem;
     private String maGiangVien;
     private String tenGiangVien;
-    
     private QuanLyDeCuong dsDeCuong;
     
     {
@@ -26,7 +25,6 @@ public class GiangVien {
         this.tenGiangVien = tenGiangVien;
         this.dsDeCuong= new QuanLyDeCuong();
     }
-    
     
     public GiangVien() {
         
@@ -48,15 +46,8 @@ public class GiangVien {
     public boolean kiemTraGiangVien(DeCuong deCuong){
         if(deCuong==null)
             return false;
-        return this.dsDeCuong.getDS().stream().anyMatch(d->d.equals(deCuong));
-                
-        
+        return this.dsDeCuong.getDS().stream().anyMatch(d->d.equals(deCuong));  
     }
-    
-    /**
-     * @return the maGiangVien
-     */
-    
 
     /**
      * @return the tenGiangVien
@@ -71,8 +62,6 @@ public class GiangVien {
     public void setTenGiangVien(String tenGiangVien) {
         this.tenGiangVien = tenGiangVien;
     }
-    
-    
 
     /**
      * @return the dsDeCuong
@@ -101,11 +90,4 @@ public class GiangVien {
     public void setMaGiangVien(String maGiangVien) {
         this.maGiangVien = maGiangVien;
     }
-
-    /**
-     * @return the deCuongList
-     */
-    
-    
-    
 }
