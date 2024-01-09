@@ -14,6 +14,7 @@ public class Menu {
     public Menu() throws FileNotFoundException {
         QuanLiMonHoc ql = new QuanLiMonHoc();
         ql.docDsMonHoc();
+        ql.hienThiDSTenMonHoc_1();
         QuanLyGiangVien qlgv = new QuanLyGiangVien();
         qlgv.nhapThongTinGiangVienTuFile();
         qlgv.getDs().forEach(g->g.hienThiGiangVien());
